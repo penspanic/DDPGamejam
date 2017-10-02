@@ -20,7 +20,7 @@ namespace DDP.Data
     [System.Serializable]
     public struct Visitor : ISyncableData
     {
-        public string InfoId;
+		public Constants.RaceType RaceType;
         public int Serial;
         public int Seed;
         public int Satisfaction;

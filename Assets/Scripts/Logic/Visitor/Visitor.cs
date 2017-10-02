@@ -6,8 +6,11 @@ namespace DDP.Logic
 {
     public class Visitor : MonoBehaviour, ISynableObject
     {
-        public Data.Visitor Data { get { return _data; } }
+		public Data.Visitor Data { get { return _data; } set { _data = value; } }
         private Data.Visitor _data;
+
+		[SerializeField]
+		private SpriteRenderer[] sprRenders;
 
         private void Awake()
         {
@@ -35,6 +38,29 @@ namespace DDP.Logic
         {
             _data.Serial = serial;
         }
+
+		public void ApplySpriteSources(Constants.RaceType raceType)
+		{
+			string filePath = "Sprites/Character/" + raceType.ToString();
+
+			var sprites = Resources.LoadAll<Sprite>(filePath);
+			if (sprites == null || sprites.Length == 0)
+				throw new UnityException("Don't have Resources!!");
+
+
+			for (int i = 0; i < sprRenders.Length; ++i)
+			{
+				sprRenders[i].sprite = null;
+
+				for (int j = 0; j < sprites.Length; ++j)
+				{
+					if (sprRenders[i].name == sprites[j].name)
+					{
+						sprRenders[i].sprite = sprites[j];
+					}
+				}
+			}
+		}
 
         public void MoveToCounter(Vector3 endPosition)
         {

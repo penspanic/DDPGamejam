@@ -215,6 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbafeb7e5f9d42e4193643450792b845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprRenders:
+  - {fileID: 212314316416814738}
+  - {fileID: 212204122661732280}
+  - {fileID: 212962720192198024}
+  - {fileID: 212389207126567496}
 --- !u!212 &212204122661732280
 SpriteRenderer:
   m_ObjectHideFlags: 1
