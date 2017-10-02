@@ -9,22 +9,44 @@ namespace DDP.UI
 	public class ResultPopup : PopupBase
 	{
 		[SerializeField]
-		private Image portrait;
-		[SerializeField]
 		private Text evaluationText;
+		[SerializeField]
+		private Star[] stars;
+
+		private Transform portraitRoot;
+		private Dictionary<string, Image> portraitDic;
 
 
+		public override void PreInit()
+		{
+			base.PreInit();
+			portraitRoot = transform.Find("Portrait");
+			portraitDic = new Dictionary<string, Image>();
+
+			AddPortrait("Body");
+			AddPortrait("Head");
+			AddPortrait("Hair");
+			AddPortrait("Eyes");
+
+
+		}
 
 		public override IEnumerator ShowPopup()
 		{
 			var curVisitor = Logic.VisitorManager.Instance.curVisitor;
-			var renderers = curVisitor.sprs;
+			var sprs = curVisitor.sprs;
 
-			for (int i = 0; i < renderers.Length; ++i)
+			foreach (KeyValuePair<string, Sprite> div in sprs)
 			{
-				
+				portraitDic[div.Key].sprite = div.Value;
 			}
 			yield return base.ShowPopup();
 		}
+
+		private void AddPortrait(string identifier)
+		{
+			portraitDic.Add(identifier, portraitRoot.Find(identifier).GetComponent<Image>());
+		}
+
 	}
 }

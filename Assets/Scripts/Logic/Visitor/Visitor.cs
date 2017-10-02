@@ -15,13 +15,14 @@ namespace DDP.Logic
         [SerializeField]
         private SortingGroup sortingGroup;
 
-		public Sprite[] sprs { get; private set; }
+		public Dictionary<string, Sprite> sprs { get; private set; }
         private Logic.Room selectedRoom;
         private Constants.FacilityType selectedFacility;
         private Constants.FoodType selectedFood;
 
         private void Awake()
         {
+			sprs = new Dictionary<string, Sprite>();
         }
 
         public void Sync(ISyncableData data)
@@ -42,7 +43,7 @@ namespace DDP.Logic
 			if (sprites == null || sprites.Length == 0)
 				throw new UnityException("Don't have Resources!!");
 
-			sprs = sprites;
+			sprs.Clear();
 			for (int i = 0; i < sprRenders.Length; ++i)
 			{
 				sprRenders[i].sprite = null;
@@ -52,6 +53,7 @@ namespace DDP.Logic
 					if (sprRenders[i].name == sprites[j].name)
 					{
 						sprRenders[i].sprite = sprites[j];
+						sprs.Add(sprites[j].name, sprites[j]);
 					}
 				}
 			}

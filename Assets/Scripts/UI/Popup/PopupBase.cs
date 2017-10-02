@@ -11,7 +11,7 @@ namespace DDP.UI
 		public bool isShown { get; protected set; }
 		// public AnimationCurve curve;
 
-		public void PreInit()
+		public virtual void PreInit()
 		{
 			isShown = false;
 
