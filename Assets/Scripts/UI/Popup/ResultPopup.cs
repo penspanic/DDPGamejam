@@ -1,16 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class ResultPopup : PopupBase {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+namespace DDP.UI
+{
+	public class ResultPopup : PopupBase
+	{
+		[SerializeField]
+		private Image portrait;
+		[SerializeField]
+		private Text evaluationText;
+
+
+
+		public override IEnumerator ShowPopup()
+		{
+
+			yield return base.ShowPopup();
+		}
 	}
 }

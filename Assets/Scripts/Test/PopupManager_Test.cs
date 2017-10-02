@@ -7,6 +7,6 @@ public class PopupManager_Test : MonoBehaviour
 	void Start()
 	{
 		PopupManager.Instance.InitPopupManager();
-		//PopupManager.Instance.ShowPopup(PopupType.ResultPopup);
+		PopupManager.Instance.ShowPopup(PopupType.ResultPopup);
 	}
 }
