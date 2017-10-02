@@ -7,7 +7,7 @@ namespace DDP.UI
 {
     public class DragTarget : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
     {
-        public static GameObject selectedObject;
+        public static DragTarget selectedObject;
         public bool IsDraggable { get; set; }
         public bool IsDragging { get; private set; }
 
@@ -28,7 +28,7 @@ namespace DDP.UI
 
             OnDragBegin?.Invoke();
 
-            selectedObject = gameObject;
+            selectedObject = this;
             startPos = transform.position;
             IsDragging = true;
         }

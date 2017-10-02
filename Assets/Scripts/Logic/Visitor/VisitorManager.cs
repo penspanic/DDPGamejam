@@ -45,5 +45,20 @@ namespace DDP.Logic
         {
             return visitors.Find((visitor) => { return visitor.Data.Serial == serial; });
         }
+
+        public void OnRoomSelected()
+        {
+
+        }
+
+        public void OnFacilitySelected()
+        {
+
+        }
+
+        public void OnFoodSelected()
+        {
+
+        }
     }
 }

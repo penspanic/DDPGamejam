@@ -12,29 +12,20 @@ namespace DDP.Logic
 
 		[SerializeField]
 		private SpriteRenderer[] sprRenders;
-		[SerializeField]
-		private SortingGroup sortingGroup;
+        [SerializeField]
+        private SortingGroup sortingGroup;
+
+        private Logic.Room selectedRoom;
+        private Constants.FacilityType selectedFacility;
+        private Constants.FoodType selectedFood;
 
         private void Awake()
         {
         }
 
-        private IEnumerator StayProcess()
-        {
-            while(_data.ElapsedTime >= _data.StayTime)
-            {
-                _data.ElapsedTime += Time.deltaTime;
-                yield return null;
-            }
-        }
-
         public void Sync(ISyncableData data)
         {
             _data = (Data.Visitor)data;
-            if(_data.ElapsedTime < _data.StayTime)
-            {
-                StartCoroutine(StayProcess());
-            }
         }
 
         public void SetSerial(int serial)
@@ -88,12 +79,20 @@ namespace DDP.Logic
 
         public void SetRoom(Logic.Room room)
         {
-
+            this.selectedRoom = room;
+            VisitorManager.Instance.OnRoomSelected();
         }
 
         public void SetFacility(Constants.FacilityType facility)
         {
+            this.selectedFacility = facility;
+            VisitorManager.Instance.OnFacilitySelected();
+        }
 
+        public void SetFood(Constants.FoodType food)
+        {
+            this.selectedFood = food;
+            VisitorManager.Instance.OnFoodSelected();
         }
     }
 }

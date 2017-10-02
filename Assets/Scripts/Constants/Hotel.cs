@@ -5,4 +5,13 @@
         Undefined = 0,
         Library,
     }
+
+    public enum FoodType
+    {
+        Undefined = 0,
+        Meat,
+        Fish,
+        Vegetable,
+        Dessert,
+    }
 }

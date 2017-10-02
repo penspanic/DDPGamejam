@@ -30,11 +30,10 @@ namespace DDP.UI
             float distance = eventData.position.DistanceWith(pointerDownPosition);
             if (distance > 50f && createdKey == null)
             {
-                createdKey = RoomKey.Create();
+                createdKey = RoomKey.Create(this.GetComponent<Logic.Room>());
 
                 createdKey.GetComponent<DragTarget>().IsDraggable = true;
                 ExecuteEvents.Execute<IBeginDragHandler>(createdKey.gameObject, eventData, ExecuteEvents.beginDragHandler);
-                //createdKey.StartDrag();
 
                 ExecuteEvents.Execute<IEndDragHandler>(this.gameObject, eventData, ExecuteEvents.endDragHandler);
                 eventData.pointerEnter = null;

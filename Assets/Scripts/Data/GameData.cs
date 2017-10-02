@@ -24,8 +24,6 @@ namespace DDP.Data
         public int Serial;
         public int Seed;
         public int Satisfaction;
-        public float ElapsedTime;
-        public float StayTime;
     }
 
     [System.Serializable]

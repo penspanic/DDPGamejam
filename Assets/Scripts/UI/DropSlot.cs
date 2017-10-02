@@ -23,14 +23,27 @@ namespace DDP.UI
 
         public void OnDrop(PointerEventData eventData)
         {
-            Debug.Log("OnDrop");
             if (DragTarget.selectedObject == null)
             {
                 Debug.Log("SelectedObject is null.");
                 return;
             }
 
-            Destroy(targetVisitor.gameObject);
+            Debug.Log("OnDrop : Target");
+            if(DragTarget.selectedObject.GetComponent<RoomKey>() != null)
+            {
+                targetVisitor.SetRoom(DragTarget.selectedObject.GetComponent<RoomKey>().TargetRoom);
+            }
+            else if(DragTarget.selectedObject.GetComponent<FacilityTicket>() != null)
+            {
+                targetVisitor.SetFacility(DragTarget.selectedObject.GetComponent<FacilityTicket>().TargetFacility);
+            }
+            else if (DragTarget.selectedObject.GetComponent<FoodTicket>() != null)
+            {
+                targetVisitor.SetFood(DragTarget.selectedObject.GetComponent<FoodTicket>().TargetFood);
+            }
+
+
             //targetVisitor.AttachCommand(DragTarget.selectedObject.GetComponent<Command>(), true);
         }
     }
