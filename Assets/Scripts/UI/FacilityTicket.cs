@@ -10,6 +10,7 @@ namespace DDP.UI
         {
             FacilityTicket newTicket = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/UI/FacilityTicket")).GetComponent<FacilityTicket>();
             newTicket.TargetFacility = facility;
+            newTicket.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/UI/Facilities/" + facility.ToString());
 
             newTicket.transform.SetParent(null);
             newTicket.transform.localScale = Vector3.one;

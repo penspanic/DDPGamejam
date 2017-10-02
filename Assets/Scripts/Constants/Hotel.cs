@@ -3,7 +3,10 @@
     public enum FacilityType
     {
         Undefined = 0,
-        Library,
+        Banquet,
+        Spa,
+        Fitness,
+        Shop,
     }
 
     public enum FoodType

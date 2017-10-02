@@ -9,7 +9,8 @@ namespace DDP.Sdb
     {
         public Constants.RaceType RaceType;
 		public Constants.AttributeType AttributeType;
-		public Constants.FacilityType LikeFacilities;
+		public Constants.FacilityType LikeFacility;
+        public Constants.FoodType LikeFood;
         public string Name;
         public int StayTime;
         public int VipGrade;

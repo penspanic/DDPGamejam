@@ -51,7 +51,7 @@ namespace DDP.UI
 
 
 			float aniTime = 0.4f;
-			for (int i = 0; i < stars.Length; ++i)
+			for (int i = 0; i < Logic.VisitorManager.Instance.VisitorRating; ++i)
 			{
 				stars[i].FireStarEffect(aniTime);
 				yield return new WaitForSeconds(aniTime);
@@ -62,6 +62,5 @@ namespace DDP.UI
 		{
 			portraitDic.Add(identifier, portraitRoot.Find(identifier).GetComponent<Image>());
 		}
-
 	}
 }

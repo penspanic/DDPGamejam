@@ -16,7 +16,7 @@ namespace DDP.Logic
         private SortingGroup sortingGroup;
 
 		public Dictionary<string, Sprite> sprs { get; private set; }
-        private Logic.Room selectedRoom;
+        private Constants.AttributeType selectedAttribute;
         private Constants.FacilityType selectedFacility;
         private Constants.FoodType selectedFood;
 
@@ -80,9 +80,9 @@ namespace DDP.Logic
             transform.position = endPos;
         }
 
-        public void SetRoom(Logic.Room room)
+        public void SetRoom(Constants.AttributeType attribute)
         {
-            this.selectedRoom = room;
+            this.selectedAttribute = attribute;
             VisitorManager.Instance.OnRoomSelected();
         }
 

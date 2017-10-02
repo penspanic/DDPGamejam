@@ -5,11 +5,11 @@ namespace DDP.UI
 {
     public class RoomKey : MonoBehaviour
     {
-        public Logic.Room TargetRoom;
-        public static RoomKey Create(Logic.Room room)
+        public Constants.AttributeType Attribute;
+        public static RoomKey Create(Constants.AttributeType attribute)
         {
             RoomKey newKey = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/UI/RoomKey")).GetComponent<RoomKey>();
-            newKey.TargetRoom = room;
+            newKey.Attribute = attribute;
 
             newKey.transform.SetParent(null);
             newKey.transform.localScale = Vector3.one;

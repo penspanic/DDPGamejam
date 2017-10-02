@@ -11,6 +11,7 @@ namespace DDP.UI
         {
             FoodTicket newTicket = Instantiate<GameObject>(Resources.Load<GameObject>("Prefabs/UI/FoodTicket")).GetComponent<FoodTicket>();
             newTicket.TargetFood = food;
+            newTicket.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/UI/Foods/" + food.ToString());
 
             newTicket.transform.SetParent(null);
             newTicket.transform.localScale = Vector3.one;

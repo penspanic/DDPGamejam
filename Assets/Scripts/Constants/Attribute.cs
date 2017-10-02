@@ -7,9 +7,5 @@
         Light,
         Fire,
         Water,
-        Sky,
-        Earth,
-        Fancy,
-        Simple,
     }
 }

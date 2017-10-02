@@ -32,7 +32,7 @@ namespace DDP.UI
             Debug.Log("OnDrop : Target");
             if(DragTarget.selectedObject.GetComponent<RoomKey>() != null)
             {
-                targetVisitor.SetRoom(DragTarget.selectedObject.GetComponent<RoomKey>().TargetRoom);
+                targetVisitor.SetRoom(DragTarget.selectedObject.GetComponent<RoomKey>().Attribute);
             }
             else if(DragTarget.selectedObject.GetComponent<FacilityTicket>() != null)
             {
