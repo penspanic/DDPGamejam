@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PopupManager_Test : MonoBehaviour 
+
+namespace DDP.UI
 {
-	void Start()
+	public class PopupManager_Test : MonoBehaviour
 	{
-		PopupManager.Instance.InitPopupManager();
-		PopupManager.Instance.ShowPopup(PopupType.ResultPopup);
+		void Start()
+		{
+			PopupManager.Instance.InitPopupManager();
+			PopupManager.Instance.ShowPopup(PopupType.ResultPopup);
+		}
 	}
 }
