@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: bef65e17f7bcf8e46bd815f80ccd0d1c
+timeCreated: 1506836983
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sandoll Kukdetopokki 01 Light
+  fontNames:
+  - Sandoll Kukdetopokki 01 Light
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

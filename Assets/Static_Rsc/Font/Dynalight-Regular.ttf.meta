@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 0ade9b54eaaa85b408fc6e73e473d75a
+timeCreated: 1506836893
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Dynalight
+  fontNames:
+  - Dynalight
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 015b9829c445fca43a70f548b71fbfa0
+timeCreated: 1506836885
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Sandoll Kukdetopokki 02 Bold
+  fontNames:
+  - Sandoll Kukdetopokki 02 Bold
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
