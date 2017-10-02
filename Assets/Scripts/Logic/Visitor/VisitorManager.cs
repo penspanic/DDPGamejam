@@ -7,22 +7,33 @@ namespace DDP.Logic
     public class VisitorManager : Singleton<VisitorManager>
     {
         private List<Visitor> visitors = new List<Visitor>();
+        public bool IsVisitorProcessed { get; private set; }
         protected override void Awake()
         {
             base.Awake();
+            IsVisitorProcessed = true;
             StartCoroutine(VisitorCreateProcess());
         }
 
         private IEnumerator VisitorCreateProcess()
         {
-            while(true)
+            while (true)
             {
-                yield return new WaitForSeconds(1f);
-				Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Human_W);
+                if(IsVisitorProcessed == false)
+                {
+                    yield return null;
+                    continue;
+                }
 
-				//newVisitor.
-                newVisitor.MoveToCounter(VisitorFactory.Instance.CounterPosition);
+                CreateVisitor();
             }
+        }
+
+        private void CreateVisitor()
+        {
+            Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Human_W);
+            newVisitor.MoveToCounter(VisitorFactory.Instance.CounterPosition);
+            IsVisitorProcessed = false;
         }
 
         public void Add(Visitor newVisitor)

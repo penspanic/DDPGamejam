@@ -23,12 +23,13 @@ namespace DDP.UI
 
         public void OnDrop(PointerEventData eventData)
         {
+            Debug.Log("OnDrop");
             if (DragTarget.selectedObject == null)
             {
+                Debug.Log("SelectedObject is null.");
                 return;
             }
 
-            Debug.Log("OnDrop");
             Destroy(targetVisitor.gameObject);
             //targetVisitor.AttachCommand(DragTarget.selectedObject.GetComponent<Command>(), true);
         }

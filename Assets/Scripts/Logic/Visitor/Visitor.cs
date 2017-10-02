@@ -85,5 +85,15 @@ namespace DDP.Logic
             }
             transform.position = endPos;
         }
+
+        public void SetRoom(Logic.Room room)
+        {
+
+        }
+
+        public void SetFacility(Constants.FacilityType facility)
+        {
+
+        }
     }
 }
