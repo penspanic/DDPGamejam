@@ -11,9 +11,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8647eec085dbf774684b29a462ea3462, type: 3}
   m_Name: Human_M
   m_EditorClassIdentifier: 
-  Id: 
-  RaceType: 2
-  Names: []
-  StayTime: 0
-  VipScore: 0
-  LikeFacilities: 0100000001000000
+  Id: Human_M
+  RaceType: 1
+  AttributeType: 2
+  LikeFacilities: 1
+  Name: "\uAE40\uC544\uBB34\uAC1C"
+  StayTime: 30
+  VipScore: 4

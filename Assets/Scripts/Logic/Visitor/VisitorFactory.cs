@@ -21,12 +21,15 @@ namespace DDP.Logic
             base.Awake();
         }
 
-        public Visitor Create()
+		public Visitor Create(Constants.RaceType raceType)
         {
             Visitor visitorInstance = Instantiate(visitorPrefab).GetComponent<Visitor>();
+			var visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(raceType.ToString());
+
+			// visitorInstance.
             visitorInstance.SetSerial(serialGenerator.Get());
             visitorInstance.transform.position = visitorCreateTransform.position;
             return visitorInstance;
         }
     }
-}
+}	

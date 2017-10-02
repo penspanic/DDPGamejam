@@ -18,7 +18,7 @@ namespace DDP.Logic
             while(true)
             {
                 yield return new WaitForSeconds(1f);
-                Visitor newVisitor = VisitorFactory.Instance.Create();
+				Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Human_W);
                 newVisitor.MoveToCounter(VisitorFactory.Instance.CounterPosition);
             }
         }
