@@ -6,7 +6,7 @@ namespace DDP.Logic
 {
     public class VisitorManager : Singleton<VisitorManager>
     {
-        private List<Visitor> visitors = new List<Visitor>();
+		public Visitor curVisitor { get; private set; }
         public bool IsVisitorProcessed { get; private set; }
         protected override void Awake()
         {
@@ -34,17 +34,19 @@ namespace DDP.Logic
             Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Human_W);
             newVisitor.MoveToCounter(VisitorFactory.Instance.CounterPosition);
             IsVisitorProcessed = false;
+
+			curVisitor = newVisitor;
         }
 
-        public void Add(Visitor newVisitor)
-        {
-            visitors.Add(newVisitor);
-        }
+        //public void Add(Visitor newVisitor)
+        //{
+        //    visitors.Add(newVisitor);
+        //}
 
-        public Visitor Get(int serial)
-        {
-            return visitors.Find((visitor) => { return visitor.Data.Serial == serial; });
-        }
+        //public Visitor Get(int serial)
+        //{
+        //    return visitors.Find((visitor) => { return visitor.Data.Serial == serial; });
+        //}
 
         public void OnRoomSelected()
         {

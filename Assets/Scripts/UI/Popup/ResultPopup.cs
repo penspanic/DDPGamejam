@@ -17,7 +17,13 @@ namespace DDP.UI
 
 		public override IEnumerator ShowPopup()
 		{
+			var curVisitor = Logic.VisitorManager.Instance.curVisitor;
+			var renderers = curVisitor.sprs;
 
+			for (int i = 0; i < renderers.Length; ++i)
+			{
+				
+			}
 			yield return base.ShowPopup();
 		}
 	}

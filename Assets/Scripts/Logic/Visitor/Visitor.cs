@@ -15,6 +15,7 @@ namespace DDP.Logic
         [SerializeField]
         private SortingGroup sortingGroup;
 
+		public Sprite[] sprs { get; private set; }
         private Logic.Room selectedRoom;
         private Constants.FacilityType selectedFacility;
         private Constants.FoodType selectedFood;
@@ -41,7 +42,7 @@ namespace DDP.Logic
 			if (sprites == null || sprites.Length == 0)
 				throw new UnityException("Don't have Resources!!");
 
-
+			sprs = sprites;
 			for (int i = 0; i < sprRenders.Length; ++i)
 			{
 				sprRenders[i].sprite = null;
@@ -94,5 +95,10 @@ namespace DDP.Logic
             this.selectedFood = food;
             VisitorManager.Instance.OnFoodSelected();
         }
+
+		public SpriteRenderer[] GetRenderers()
+		{
+			return sprRenders;
+		}
     }
 }
