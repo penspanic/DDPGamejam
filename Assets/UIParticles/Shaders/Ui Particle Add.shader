@@ -1,5 +1,3 @@
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 Shader "UI/Particles/Additive" {
 Properties {
 	_TintColor ("Tint Color", Color) = (0.5,0.5,0.5,0.5)
@@ -69,11 +67,7 @@ Category {
 			{
 				v2f o;
 				o.worldPosition = v.vertex;
-				#if UNITY_5_4_OR_NEWER
-				o.vertex = UnityObjectToClipPos(v.vertex);
-				#else
 				o.vertex = UnityObjectToClipPos(float4(v.vertex));
-                #endif
 				o.color = v.color;
 				o.texcoord = TRANSFORM_TEX(v.texcoord,_MainTex);
 				return o;
