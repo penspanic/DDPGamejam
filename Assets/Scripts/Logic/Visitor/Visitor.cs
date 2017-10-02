@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Rendering;
 
 namespace DDP.Logic
 {
@@ -11,6 +12,8 @@ namespace DDP.Logic
 
 		[SerializeField]
 		private SpriteRenderer[] sprRenders;
+		[SerializeField]
+		private SortingGroup sortingGroup;
 
         private void Awake()
         {
@@ -60,6 +63,8 @@ namespace DDP.Logic
 					}
 				}
 			}
+
+			sortingGroup.sortingOrder = -_data.Serial;
 		}
 
         public void MoveToCounter(Vector3 endPosition)

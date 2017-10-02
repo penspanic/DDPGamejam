@@ -54,6 +54,7 @@ GameObject:
   - component: {fileID: 95874888107885454}
   - component: {fileID: 114408481181791936}
   - component: {fileID: 61999533079735070}
+  - component: {fileID: 210472474208135238}
   m_Layer: 0
   m_Name: Visitor
   m_TagString: Untagged
@@ -87,7 +88,7 @@ GameObject:
   - component: {fileID: 4390536476616656}
   - component: {fileID: 212389207126567496}
   m_Layer: 0
-  m_Name: Eye
+  m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -220,6 +221,17 @@ MonoBehaviour:
   - {fileID: 212204122661732280}
   - {fileID: 212962720192198024}
   - {fileID: 212389207126567496}
+  sortingGroup: {fileID: 210472474208135238}
+--- !u!210 &210472474208135238
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1207315992027638}
+  m_Enabled: 1
+  m_SortingLayerID: 1187669015
+  m_SortingLayer: 1
+  m_SortingOrder: 0
 --- !u!212 &212204122661732280
 SpriteRenderer:
   m_ObjectHideFlags: 1
