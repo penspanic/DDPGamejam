@@ -9,7 +9,7 @@
         Water,
         Sky,
         Earth,
-        Wind,
-        Electric,
+        Fancy,
+        Simple,
     }
 }

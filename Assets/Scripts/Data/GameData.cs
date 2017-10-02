@@ -54,5 +54,6 @@ namespace DDP.Data
     {
         public List<Room> Rooms;
         public List<Visitor> LobbyVisitors;
+        public Hotel Hotel;
     }
 }
