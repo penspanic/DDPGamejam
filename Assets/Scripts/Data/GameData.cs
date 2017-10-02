@@ -21,9 +21,11 @@ namespace DDP.Data
     public struct Visitor : ISyncableData
     {
         public string InfoId;
+        public int Serial;
         public int Seed;
         public int Satisfaction;
-        public int ElapsedTime;
+        public float ElapsedTime;
+        public float StayTime;
     }
 
     [System.Serializable]

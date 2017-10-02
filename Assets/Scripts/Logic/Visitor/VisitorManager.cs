@@ -18,12 +18,19 @@ namespace DDP.Logic
             while(true)
             {
                 yield return new WaitForSeconds(1f);
+                Visitor newVisitor = VisitorFactory.Instance.Create();
+                newVisitor.MoveToCounter(VisitorFactory.Instance.CounterPosition);
             }
+        }
+
+        public void Add(Visitor newVisitor)
+        {
+            visitors.Add(newVisitor);
         }
 
         public Visitor Get(int serial)
         {
-            return visitors.Find((visitor) => { return visitor.Serial == serial; });
+            return visitors.Find((visitor) => { return visitor.Data.Serial == serial; });
         }
     }
 }
