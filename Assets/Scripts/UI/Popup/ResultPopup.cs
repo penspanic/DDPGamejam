@@ -40,7 +40,22 @@ namespace DDP.UI
 			{
 				portraitDic[div.Key].sprite = div.Value;
 			}
+
+			for (int i = 0; i < stars.Length; ++i)
+			{
+				stars[i].InitStar();
+			}
+
+
 			yield return base.ShowPopup();
+
+
+			float aniTime = 0.4f;
+			for (int i = 0; i < stars.Length; ++i)
+			{
+				stars[i].FireStarEffect(aniTime);
+				yield return new WaitForSeconds(aniTime);
+			}
 		}
 
 		private void AddPortrait(string identifier)
