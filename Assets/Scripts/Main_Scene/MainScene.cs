@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using DG.Tweening;
 
 namespace DDP.Main_Scene
 {
@@ -10,6 +10,13 @@ namespace DDP.Main_Scene
 
 		[SerializeField]
 		private StepImage[] stepImages;
+
+		[SerializeField]
+		private AnimationObject moon;
+		[SerializeField]
+		private AnimationObject title;
+		[SerializeField]
+		private Star5_Effect star5Effect;
 
 
 		// private bool is
@@ -25,13 +32,23 @@ namespace DDP.Main_Scene
 				stepImages[i].InitStepImage(prefix, level);
 			}
 
+			moon.InitBeforeAni();
+			title.InitBeforeAni();
+
+			if(level == 5)
+				star5Effect.ShowEffect();
+
 			StartCoroutine(ShowMainSceneRoutine());
 		}
 
 
 		private IEnumerator ShowMainSceneRoutine()
 		{
-			yield return null;
+			// init
+			yield return new WaitForSeconds(1f);
+			yield return moon.PlayShowAnimation();
+			yield return new WaitForSeconds(0.2f);
+			yield return title.PlayShowAnimation();
 		}
 
 		public void OnPressedStartButton()
