@@ -13,8 +13,8 @@ namespace DDP.Logic
         [SerializeField]
         private GameObject foods;
 
-		public Visitor curVisitor { get; private set; }
-        public int VisitorRating { get { return GetStarAmount(CalculateScore(curVisitor)); } }
+		public Visitor currentVisitor { get; private set; }
+        public int VisitorRating { get { return GetStarAmount(CalculateScore(currentVisitor)); } }
         public bool IsVisitorProcessed { get; private set; }
         protected override void Awake()
         {
@@ -41,11 +41,11 @@ namespace DDP.Logic
 
         private void CreateVisitor()
         {
-            Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Goblin_M);
+            Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Human_W);
             newVisitor.MoveToCounter(VisitorFactory.Instance.CounterPosition);
             IsVisitorProcessed = false;
 
-			curVisitor = newVisitor;
+			currentVisitor = newVisitor;
 
             rooms.SetActive(true);
         }
@@ -103,13 +103,14 @@ namespace DDP.Logic
             Debug.Log("OnFoodSelected");
             foods.SetActive(false);
 
+            HotelManager.Instance.CheckOut(currentVisitor, CalculateScore(currentVisitor));
             UI.PopupManager.Instance.ShowPopup(UI.PopupType.ResultPopup);
         }
 
         public void OnResultPopupClosed()
         {
-            Destroy(curVisitor.gameObject);
-            curVisitor = null;
+            Destroy(currentVisitor.gameObject);
+            currentVisitor = null;
             IsVisitorProcessed = true;
         }
     }

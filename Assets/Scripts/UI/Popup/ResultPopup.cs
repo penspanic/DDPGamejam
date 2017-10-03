@@ -31,7 +31,7 @@ namespace DDP.UI
 
 		public override IEnumerator ShowPopup()
 		{
-			var curVisitor = Logic.VisitorManager.Instance.curVisitor;
+			var curVisitor = Logic.VisitorManager.Instance.currentVisitor;
 			var sprs = curVisitor.sprs;
 
 			ApplyCharImg(sprs);

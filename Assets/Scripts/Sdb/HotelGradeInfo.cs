@@ -20,5 +20,21 @@ namespace DDP.Sdb
 
             return 0;
         }
+
+        public float GetExpRate(int score)
+        {
+            for (int i = 0; i < Grades.Count; ++i)
+            {
+                if (Grades[i].X <= score && score <= Grades[i].Y)
+                {
+                    int rangeValue = Grades[i].Y - Grades[i].X;
+                    int myValue = score - Grades[i].X;
+
+                    return (float)myValue / (float)rangeValue;
+                }
+            }
+
+            return 0f;
+        }
     }
 }

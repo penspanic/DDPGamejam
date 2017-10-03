@@ -41,7 +41,7 @@ namespace DDP.UI
             }
 
             Vector2 mousePos = Input.mousePosition;
-            this.transform.position = CameraUtil.GetWorldPositionOnPlane(mousePos, 1f);
+            this.transform.position = CameraUtil.GetWorldPositionOnPlane(mousePos, 4f);
             //Vector2 point;
             //RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out point);
             //rectTransform.anchoredPosition = point;
