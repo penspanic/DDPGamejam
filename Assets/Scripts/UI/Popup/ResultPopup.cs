@@ -11,7 +11,11 @@ namespace DDP.UI
 		[SerializeField]
 		private Text evaluationText;
 		[SerializeField]
+		private Image outlineImg;
+		[SerializeField]
 		private Star[] stars;
+		[SerializeField]
+		private Sprite[] gradeOutlineSprs;
 
 		private Transform portraitRoot;
 		private Dictionary<string, Image> portraitDic;
@@ -35,6 +39,7 @@ namespace DDP.UI
 			var sprs = curVisitor.sprs;
 
 			ApplyCharImg(sprs);
+			ApplyOutline(Logic.VisitorManager.Instance.VisitorRating);
 
 			// Stars
 			for (int i = 0; i < stars.Length; ++i)
@@ -64,6 +69,7 @@ namespace DDP.UI
 		private void AddEyeEmotion()
 		{
 			var img = portraitRoot.Find("Eyes").GetComponent<Image>();
+			portraitDic.Add("Default", img);
 			portraitDic.Add("Happy", img);
 			portraitDic.Add("Sad", img);
 			portraitDic.Add("Angry", img);
@@ -91,6 +97,7 @@ namespace DDP.UI
 			// Emotion
 			int rate = Logic.VisitorManager.Instance.VisitorRating;
 			ApplyEmotion(rate, sprDic);
+
 		}
 
 		private void ApplyEmotion(int rate, Dictionary<string, Sprite> sprDic)
@@ -98,13 +105,25 @@ namespace DDP.UI
 			var eyeImg = portraitDic["Eyes"];
 			eyeImg.enabled = true;
 
-			if (rate <= 3)
+			if (rate <= 2)
 				eyeImg.sprite = Random.Range(0, 2) == 0 ? sprDic["Angry"] : sprDic["Sad"];
+			else if( rate == 3)
+				eyeImg.sprite = sprDic["Default"];
 			else
 				eyeImg.sprite = sprDic["Happy"];
 
 			eyeImg.SetNativeSize();
 			
+		}
+
+		private void ApplyOutline(int rate)
+		{
+			if (rate <= 2)
+				outlineImg.sprite = gradeOutlineSprs[0];
+			else if(rate <= 3)
+				outlineImg.sprite = gradeOutlineSprs[1];
+			else
+				outlineImg.sprite = gradeOutlineSprs[2];
 		}
 
         public void OnPressedCloseButton()
