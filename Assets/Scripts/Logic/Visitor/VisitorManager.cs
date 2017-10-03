@@ -12,6 +12,8 @@ namespace DDP.Logic
         private GameObject facilities;
         [SerializeField]
         private GameObject foods;
+        [SerializeField]
+        private Animator doorAnimator;
 
 		public Visitor currentVisitor { get; private set; }
         public int VisitorRating { get { return GetStarAmount(CalculateScore(currentVisitor)); } }
@@ -53,6 +55,7 @@ namespace DDP.Logic
 			currentVisitor = newVisitor;
 
             rooms.SetActive(true);
+            doorAnimator.Play("OpenAndClose");
 
             OnVisitorCreated?.Invoke(currentVisitor);
         }
