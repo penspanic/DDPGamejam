@@ -13,7 +13,6 @@ namespace DDP.UI
             newTicket.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/UI/Facilities/" + facility.ToString());
 
             newTicket.transform.SetParent(null);
-            newTicket.transform.localScale = Vector3.one;
 
             return newTicket;
         }

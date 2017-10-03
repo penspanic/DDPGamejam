@@ -12,7 +12,6 @@ namespace DDP.UI
             newKey.Attribute = attribute;
 
             newKey.transform.SetParent(null);
-            newKey.transform.localScale = Vector3.one;
 
             return newKey;
         }

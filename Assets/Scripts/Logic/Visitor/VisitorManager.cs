@@ -98,19 +98,19 @@ namespace DDP.Logic
 
         public int GetStarAmount(int score)
         {
-            if(score >= 30)
+            if(score >= 27)
             {
                 return 5;
             }
-            else if(score >= 20)
+            else if(score >= 21)
             {
                 return 4;
             }
-            else if(score >= 0)
+            else if(score >= 15)
             {
                 return 3;
             }
-            else if(score >= -10)
+            else if(score >= 9)
             {
                 return 2;
             }

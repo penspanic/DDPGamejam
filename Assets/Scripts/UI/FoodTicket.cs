@@ -14,7 +14,6 @@ namespace DDP.UI
             newTicket.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprites/UI/Foods/" + food.ToString());
 
             newTicket.transform.SetParent(null);
-            newTicket.transform.localScale = Vector3.one;
 
             return newTicket;
         }
