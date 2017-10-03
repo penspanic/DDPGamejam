@@ -8,12 +8,9 @@ namespace DDP.Sdb
     public class VisitorInfo : SdbIdentifiableBase
     {
         public Constants.RaceType RaceType;
-		public Constants.AttributeType AttributeType;
-        public Constants.AttributeType HateAttributeType;
-		public Constants.FacilityType LikeFacility;
-        public Constants.FacilityType HateFacility;
-        public Constants.FoodType LikeFood;
-        public Constants.FoodType HateFood;
+		public List<Constants.AttributeType> Attributes;
+		public List<Constants.FacilityType> Facilities;
+        public List<Constants.FoodType> Foods;
         public string Name;
         public Constants.SexType Sex;
         public string RaceName;

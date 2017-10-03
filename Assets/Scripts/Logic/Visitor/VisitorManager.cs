@@ -60,38 +60,38 @@ namespace DDP.Logic
             OnVisitorCreated?.Invoke(currentVisitor);
         }
 
+        private int GetElementScore(int index)
+        {
+            if(index == 0)
+            {
+                return 10;
+            }
+            else if(index == 1)
+            {
+                return 7;
+            }
+            else if(index == 2)
+            {
+                return 4;
+            }
+
+            return 1;
+        }
+
         private int CalculateScore(Logic.Visitor visitor)
         {
             Constants.RaceType raceType = visitor.Info.RaceType;
             Sdb.VisitorInfo visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(raceType.ToString());
             int score = 0;
-            const int scoreValue = 10;
-            if(visitor.SelectedAttribute == visitorInfo.AttributeType)
-            {
-                score += scoreValue;
-            }
-            else if(visitor.SelectedAttribute == visitorInfo.HateAttributeType)
-            {
-                score -= scoreValue;
-            }
 
-            if(visitor.SelectedFacility == visitorInfo.LikeFacility)
-            {
-                score += scoreValue;
-            }
-            else if(visitor.SelectedFacility == visitorInfo.HateFacility)
-            {
-                score -= scoreValue;
-            }
+            int selectedIndex = visitorInfo.Attributes.IndexOf(visitor.SelectedAttribute);
+            score += GetElementScore(selectedIndex);
 
-            if(visitor.SelectedFood == visitorInfo.LikeFood)
-            {
-                score += scoreValue;
-            }
-            else if(visitor.SelectedFood == visitorInfo.HateFood)
-            {
-                score -= scoreValue;
-            }
+            selectedIndex = visitorInfo.Facilities.IndexOf(visitor.SelectedFacility);
+            score += GetElementScore(selectedIndex);
+
+            selectedIndex = visitorInfo.Foods.IndexOf(visitor.SelectedFood);
+            score += GetElementScore(selectedIndex);
 
             return score;
         }
