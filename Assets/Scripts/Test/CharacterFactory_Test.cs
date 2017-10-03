@@ -10,7 +10,11 @@ namespace DDP.Test
 
 		void Start()
 		{
-			// Logic.VisitorManager.Instance.(Constants.RaceType.Wolf_M);
+
+			var visitorInfos = SdbInstance<Sdb.VisitorInfo>.GetAll();
+			var selectedInfo = Constants.RaceType.Asmodian_W;//visitorInfos[Random.Range(0, visitorInfos.Count)];
+			Logic.Visitor newVisitor = Logic.VisitorFactory.Instance.Create(selectedInfo);
+			newVisitor.MoveToCounter(Logic.VisitorFactory.Instance.CounterPosition);
 		}
 	}
 

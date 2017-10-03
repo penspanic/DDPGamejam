@@ -318,7 +318,6 @@ GameObject:
   - component: {fileID: 1242878222}
   - component: {fileID: 1242878223}
   - component: {fileID: 1242878224}
-  - component: {fileID: 1242878225}
   m_Layer: 0
   m_Name: VisitorFactory
   m_TagString: Untagged
@@ -365,20 +364,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd80237d698e045dfb8193c4f3d3ac2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1242878225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1242878221}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f13f0ef134cde8441a2a0f7502aa8a37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rooms: {fileID: 0}
-  facilities: {fileID: 0}
-  foods: {fileID: 0}
 --- !u!1 &2052283397
 GameObject:
   m_ObjectHideFlags: 0
