@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8647eec085dbf774684b29a462ea3462, type: 3}
+  m_Name: Cat_W
+  m_EditorClassIdentifier: 
+  Id: Cat_W
+  RaceType: 22
+  Attributes: 02000000010000000300000004000000
+  Facilities: 04000000010000000300000002000000
+  Foods: 02000000010000000400000003000000
+  Name: "\uC544\uBE44\uAC8C\uC77C"
+  Sex: 2
+  RaceName: "\uACE0\uC591\uC774\uC778\uAC04"
+  JobName: "\uD559\uC790"
+  AttributeDescription: "\uCCAD\uB834\uACB0\uBC31\uD55C \uB17C\uB9AC\uC8FC\uC758\uC790"
+  VipGrade: 4
+  EnterMessages:
+  - "\uADC0\uC871\uC0DD\uD65C\uC740 \uC815\uB9D0 \uCD5C\uC545\uC774\uC5D0\uC694, \uB9E4\uC77C\uB9E4\uC77C
+    \uC6B4\uB3D9\uC744 \uC2DC\uD0A4\uACE0 \uC57C\uCC44\uB9CC \uBA39\uC774\uB2E4\uB2C8,
+    \uC815\uB9D0 \uB054\uCC0D\uD558\uC9C0 \uC54A\uC544\uC694?"
+  - "\uB108\uBB34 \uD53C\uACE4\uD558\uAD70\uC694, \uB530\uB73B\uD55C \uBB3C\uC5D0
+    \uBAB8\uC744 \uB2F4\uAD74 \uC218 \uC788\uC5C8\uC73C\uBA74 \uC88B\uACA0\uAD70\uC694, "
+  SuccessMessages:
+  - "\uD658\uC0C1\uC801\uC774\uC5D0\uC694, \uC218\uB3C4\uC5D0\uC11C \uC5EC\uAE30\uAE4C\uC9C0
+    \uC628 \uBCF4\uB78C\uC774 \uC788\uAD70\uC694"
+  - "\uBA4B\uC9C0\uB124\uC694, \uB0B4 \uB9C8\uC74C\uC5D0 \uAF2D \uB4E4\uC5B4\uC694!"
+  NormalMessages:
+  - "\uC775\uC219\uD55C \uC11C\uBE44\uC2A4\uAD70\uC694, \uC0C8\uB86D\uC9C4 \uC54A\uB124\uC694"
+  - "\uB9CC\uC871\uC2A4\uB7EC\uC6E0\uC5B4\uC694, \uADF8 \uBFD0 \uC785\uB2C8\uB2E4."
+  FailMessages:
+  - "\uC774\uB7F0 \uACF3\uC744 \uD638\uD154\uC774\uB77C\uACE0 \uBD80\uB974\uB294\uAC83\uC870\uCC28
+    \uBD80\uB044\uB7FD\uB124\uC694."
+  - "\uB054\uCC0D\uD558\uAD70\uC694, \uC774\uB7F0 \uACF3\uC744 \uD638\uD154\uC774\uB77C\uACE0
+    \uBD80\uB974\uB2E4\uB2C8..."
