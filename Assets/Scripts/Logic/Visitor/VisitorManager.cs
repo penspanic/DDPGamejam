@@ -14,7 +14,7 @@ namespace DDP.Logic
         private GameObject foods;
 
 		public Visitor curVisitor { get; private set; }
-        public int VisitorRating { get { return 1; } }
+        public int VisitorRating { get { return GetStarAmount(CalculateScore(curVisitor)); } }
         public bool IsVisitorProcessed { get; private set; }
         protected override void Awake()
         {
@@ -41,7 +41,7 @@ namespace DDP.Logic
 
         private void CreateVisitor()
         {
-            Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Human_W);
+            Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Goblin_M);
             newVisitor.MoveToCounter(VisitorFactory.Instance.CounterPosition);
             IsVisitorProcessed = false;
 
@@ -50,15 +50,39 @@ namespace DDP.Logic
             rooms.SetActive(true);
         }
 
-        //public void Add(Visitor newVisitor)
-        //{
-        //    visitors.Add(newVisitor);
-        //}
+        private int CalculateScore(Logic.Visitor visitor)
+        {
+            Constants.RaceType raceType = visitor.Data.RaceType;
+            Sdb.VisitorInfo visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(raceType.ToString());
+            int score = 0;
+            score += visitor.SelectedAttribute == visitorInfo.AttributeType ? 1 : -1;
+            score += visitor.SelectedFacility == visitorInfo.LikeFacility ? 1 : -1;
+            score += visitor.SelectedFood == visitorInfo.LikeFood ? 1 : -1;
+            score *= 10;
+            return score;
+        }
 
-        //public Visitor Get(int serial)
-        //{
-        //    return visitors.Find((visitor) => { return visitor.Data.Serial == serial; });
-        //}
+        public int GetStarAmount(int score)
+        {
+            if(score >= 30)
+            {
+                return 5;
+            }
+            else if(score >= 20)
+            {
+                return 4;
+            }
+            else if(score >= 0)
+            {
+                return 3;
+            }
+            else if(score >= -10)
+            {
+                return 2;
+            }
+
+            return 1;
+        }
 
         public void OnRoomSelected()
         {
@@ -80,6 +104,13 @@ namespace DDP.Logic
             foods.SetActive(false);
 
             UI.PopupManager.Instance.ShowPopup(UI.PopupType.ResultPopup);
+        }
+
+        public void OnResultPopupClosed()
+        {
+            Destroy(curVisitor.gameObject);
+            curVisitor = null;
+            IsVisitorProcessed = true;
         }
     }
 }

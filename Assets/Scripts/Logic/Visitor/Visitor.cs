@@ -16,9 +16,9 @@ namespace DDP.Logic
         private SortingGroup sortingGroup;
 
 		public Dictionary<string, Sprite> sprs { get; private set; }
-        private Constants.AttributeType selectedAttribute;
-        private Constants.FacilityType selectedFacility;
-        private Constants.FoodType selectedFood;
+        public Constants.AttributeType SelectedAttribute { get; private set; }
+        public Constants.FacilityType SelectedFacility { get; private set; }
+        public Constants.FoodType SelectedFood { get; private set; }
 
         private void Awake()
         {
@@ -116,19 +116,19 @@ namespace DDP.Logic
 
         public void SetRoom(Constants.AttributeType attribute)
         {
-            this.selectedAttribute = attribute;
+            this.SelectedAttribute = attribute;
             VisitorManager.Instance.OnRoomSelected();
         }
 
         public void SetFacility(Constants.FacilityType facility)
         {
-            this.selectedFacility = facility;
+            this.SelectedFacility = facility;
             VisitorManager.Instance.OnFacilitySelected();
         }
 
         public void SetFood(Constants.FoodType food)
         {
-            this.selectedFood = food;
+            this.SelectedFood = food;
             VisitorManager.Instance.OnFoodSelected();
         }
 

@@ -96,5 +96,11 @@ namespace DDP.UI
 			eyeImg.SetNativeSize();
 			
 		}
+
+        public void OnPressedCloseButton()
+        {
+            Logic.VisitorManager.Instance.OnResultPopupClosed();
+            PopupManager.Instance.PopHidePopup();
+        }
 	}
 }
