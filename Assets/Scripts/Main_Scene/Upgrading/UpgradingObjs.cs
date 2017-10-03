@@ -57,9 +57,6 @@ namespace DDP.Main_Scene
 			// transform.DO
 //			yield return lvUpTrs.DOLocalMoveY(450, 0.4f).SetEase(Ease.OutBack, 2.5f).WaitForCompletion();
 		}
-
-
-
 	}
 
 }

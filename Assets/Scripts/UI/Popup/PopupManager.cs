@@ -61,7 +61,6 @@ namespace DDP.UI
 				popup.PreInit();
 
 				popupDic.Add(div.Key, popup);
-				Debug.Log("AAAA");
 			}
 
 			isTransition = false;

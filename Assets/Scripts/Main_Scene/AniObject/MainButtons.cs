@@ -26,5 +26,4 @@ namespace DDP.Main_Scene
 			yield return creditButton.DOLocalMoveY(-50, 0.4f).SetEase(Ease.OutBack).SetDelay(0.1f).WaitForCompletion();
 		}
 	}
-
 }

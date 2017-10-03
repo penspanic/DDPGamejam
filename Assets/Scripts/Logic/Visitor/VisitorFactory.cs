@@ -26,6 +26,11 @@ namespace DDP.Logic
             Visitor visitorInstance = Instantiate(visitorPrefab).GetComponent<Visitor>();
 			var visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(raceType.ToString());
 
+			if (visitorInfo == null)
+			{
+				Debug.LogError("VisitorInfo is null, Id : " + raceType.ToString());
+			}
+
             visitorInstance.Info = visitorInfo;
             visitorInstance.Serial = serialGenerator.Get();
 

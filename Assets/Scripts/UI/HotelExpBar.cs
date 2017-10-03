@@ -11,10 +11,12 @@ namespace DDP.UI
         private void Awake()
         {
             Logic.HotelManager.Instance.OnExpRateChanged += OnExpRateChanged;
+			OnExpRateChanged(Logic.HotelManager.Instance.GetExpRate());
         }
 
         private void OnExpRateChanged(float rate)
         {
+			Debug.Log("Rate: " + rate);
             fillImage.fillAmount = rate;
         }
     }

@@ -31,7 +31,7 @@ namespace DDP.Main_Scene
 
 		void Awake()
 		{
-
+			PlayerPrefs.DeleteAll();
 			int level = Mathf.Clamp(Logic.HotelManager.Instance.Grade, 1, 5);
 			bool isUpgrading = GradeChangeListener.Instance.isUpgrading;
 
@@ -79,7 +79,9 @@ namespace DDP.Main_Scene
 			{
 				upgradeObjs.OnChangeStepImage += OnChangeStepImage;
 
-				StartCoroutine(upgradeObjs.PlayShowAnimation());
+				yield return upgradeObjs.PlayShowAnimation();
+				yield return new WaitForSeconds(1f);
+				SceneManager.Instance.ChangeScene("Lobby");
 			}
 			else 
 			{
@@ -95,6 +97,10 @@ namespace DDP.Main_Scene
 		public void OnPressedStartButton()
 		{
 			SceneManager.Instance.ChangeScene("Lobby");
+		}
+		public void OnPressedCredit()
+		{
+			Credit.Instance.Show();
 		}
 
 		public void OnChangeStepImage(int grade)

@@ -49,7 +49,6 @@ namespace DDP.UI
 
         public void OnEndDrag(PointerEventData eventData)
         {
-            Debug.Log("DragTarget : OnEndDrag");
             OnDragEnd?.Invoke();
 
             selectedObject = null;

@@ -173,9 +173,15 @@ namespace DDP.Logic
 
         public void OnResultPopupClosed()
         {
+			//HotelManager.Instance.CheckOut(currentVisitor, CalculateScore(currentVisitor) * currentVisitor.Info.VipGrade, true);
+
+
+
             Destroy(currentVisitor.gameObject);
             currentVisitor = null;
             IsVisitorProcessed = true;
+
+			Main_Scene.GradeChangeListener.Instance.CheckChangeUpgradeScene();
         }
     }
 }

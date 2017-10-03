@@ -14,6 +14,9 @@ namespace DDP
 
         public void ChangeScene(string sceneId, Constants.SceneChangeEffect changeEffect = Constants.SceneChangeEffect.FadeOut)
         {
+			UnityEngine.SceneManagement.SceneManager.LoadScene(sceneId);
+			return;
+
             if(IsChanging == true)
             {
                 return;

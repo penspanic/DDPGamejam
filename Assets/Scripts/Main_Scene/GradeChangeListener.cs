@@ -13,7 +13,19 @@ namespace DDP.Main_Scene
 
 		public void OnHotelGradeIncreased()
 		{
+			UnityEngine.Debug.Log("UPGRade!!");
 			isUpgrading = true;
+			//SceneManager.Instance.ChangeScene("Main");
+		}
+
+		public void CheckChangeUpgradeScene()
+		{
+			if (isUpgrading == false)
+				return;
+
+			UnityEngine.Debug.Log("CHAGNE!!!");
+
+			SceneManager.Instance.ChangeScene("Main");
 		}
 	}
 }

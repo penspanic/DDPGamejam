@@ -32,7 +32,7 @@ namespace DDP.Logic
             return gradeInfo.GetGrade(Score);
         }
 
-        private float GetExpRate()
+		public float GetExpRate()
         {
             var gradeInfo = SpecificSdb<Sdb.HotelGradeInfo>.Get();
             return gradeInfo.GetExpRate(Score);
@@ -43,6 +43,7 @@ namespace DDP.Logic
             var visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(visitor.Info.RaceType.ToString());
             var gradeInfo = SpecificSdb<Sdb.HotelGradeInfo>.Get();
             int originalGrade = gradeInfo.GetGrade(Score);
+			int originalScore = Score;
             Score += visitorScore * visitorInfo.VipGrade;
             int newGrade = gradeInfo.GetGrade(Score);
 
@@ -59,6 +60,7 @@ namespace DDP.Logic
             }
 			if (newGrade > originalGrade)
 			{
+				Debug.Log("UpGrade!!, new: " + newGrade + ", ori: " + originalGrade + " new score : " + Score + " ori score : " + originalScore);
 				Main_Scene.GradeChangeListener.Instance.OnHotelGradeIncreased();
 			}
 

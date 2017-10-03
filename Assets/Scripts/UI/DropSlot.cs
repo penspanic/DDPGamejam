@@ -29,7 +29,6 @@ namespace DDP.UI
                 return;
             }
 
-            Debug.Log("OnDrop : Target");
             if(DragTarget.selectedObject.GetComponent<RoomKey>() != null)
             {
                 targetVisitor.SetRoom(DragTarget.selectedObject.GetComponent<RoomKey>().Attribute);

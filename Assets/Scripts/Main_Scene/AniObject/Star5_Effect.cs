@@ -25,5 +25,4 @@ namespace DDP.Main_Scene
 			gameObject.SetActive(false);
 		}
 	}
-
 }
