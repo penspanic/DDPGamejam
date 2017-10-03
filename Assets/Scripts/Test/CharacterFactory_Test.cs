@@ -10,7 +10,7 @@ namespace DDP.Test
 
 		void Start()
 		{
-			Logic.VisitorFactory.Instance.Create(Constants.RaceType.Wolf_M);
+			// Logic.VisitorManager.Instance.(Constants.RaceType.Wolf_M);
 		}
 	}
 

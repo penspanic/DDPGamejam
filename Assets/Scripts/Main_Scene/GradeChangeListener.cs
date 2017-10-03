@@ -3,6 +3,8 @@ namespace DDP.Main_Scene
 {
 	public class GradeChangeListener : Singleton<GradeChangeListener>
 	{
+
+		public bool isUpgrading = false;
 		protected override void Awake()
 		{
 			base.Awake();
@@ -11,7 +13,7 @@ namespace DDP.Main_Scene
 
 		public void OnHotelGradeIncreased()
 		{
-			
+			isUpgrading = true;
 		}
 	}
 }

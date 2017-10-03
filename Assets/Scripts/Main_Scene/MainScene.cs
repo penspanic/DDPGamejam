@@ -18,6 +18,7 @@ namespace DDP.Main_Scene
 		{
 			string prefix = "Sprites/Main/";
 			int level = Logic.HotelManager.Instance.Grade;
+			bool isUpgrading = GradeChangeListener.Instance.isUpgrading;
 
 			for (int i = 0; i < stepImages.Length; ++i)
 			{
