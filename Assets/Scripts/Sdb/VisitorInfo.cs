@@ -9,12 +9,16 @@ namespace DDP.Sdb
     {
         public Constants.RaceType RaceType;
 		public Constants.AttributeType AttributeType;
+        public Constants.AttributeType HateAttributeType;
 		public Constants.FacilityType LikeFacility;
+        public Constants.FacilityType HateFacility;
         public Constants.FoodType LikeFood;
+        public Constants.FoodType HateFood;
         public string Name;
         public int VipGrade;
         public string[] EnterMessages;
         public string[] SuccessMessages;
+        public string[] NormalMessages;
         public string[] FailMessages;
     }
 }

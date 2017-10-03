@@ -55,9 +55,34 @@ namespace DDP.Logic
             Constants.RaceType raceType = visitor.Info.RaceType;
             Sdb.VisitorInfo visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(raceType.ToString());
             int score = 0;
-            score += visitor.SelectedAttribute == visitorInfo.AttributeType ? 1 : -1;
-            score += visitor.SelectedFacility == visitorInfo.LikeFacility ? 1 : -1;
-            score += visitor.SelectedFood == visitorInfo.LikeFood ? 1 : -1;
+            const int scoreValue = 10;
+            if(visitor.SelectedAttribute == visitorInfo.AttributeType)
+            {
+                score += scoreValue;
+            }
+            else if(visitor.SelectedAttribute == visitorInfo.HateAttributeType)
+            {
+                score -= scoreValue;
+            }
+
+            if(visitor.SelectedFacility == visitorInfo.LikeFacility)
+            {
+                score += scoreValue;
+            }
+            else if(visitor.SelectedFacility == visitorInfo.HateFacility)
+            {
+                score -= scoreValue;
+            }
+
+            if(visitor.SelectedFood == visitorInfo.LikeFood)
+            {
+                score += scoreValue;
+            }
+            else if(visitor.SelectedFood == visitorInfo.HateFood)
+            {
+                score -= scoreValue;
+            }
+
             score *= 10;
             return score;
         }
@@ -88,10 +113,14 @@ namespace DDP.Logic
 		{
 			int rating = VisitorRating;
 			string[] messages = null;
-			if (rating <= 3)
+			if (rating < 3)
 			{
 				messages = currentVisitor.Info.FailMessages;
 			}
+            else if(rating == 3)
+            {
+                messages = currentVisitor.Info.NormalMessages;
+            }
 			else
 			{
 				messages = currentVisitor.Info.SuccessMessages;
