@@ -7,19 +7,20 @@ namespace DDP.Main_Scene
 {
 	public class MainScene : MonoBehaviour
 	{
+
 		[SerializeField]
-		private Hotel hotel;
-		[SerializeField]
-		private Moon moon;
+		private StepImage[] stepImages;
 
 
 		void Awake()
 		{
 			string prefix = "Sprites/Main/";
-			int level = 5;
+			int level = 2;
 
-			moon.InitStepImage(prefix, level);
-			hotel.InitStepImage(prefix, level);
+			for (int i = 0; i < stepImages.Length; ++i)
+			{
+				stepImages[i].InitStepImage(prefix, level);
+			}
 
 			StartCoroutine(ShowMainSceneRoutine());
 		}

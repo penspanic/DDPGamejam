@@ -197,17 +197,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &448725340
+--- !u!1 &379648361
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 448725341}
-  - component: {fileID: 448725344}
-  - component: {fileID: 448725343}
-  - component: {fileID: 448725342}
+  - component: {fileID: 379648362}
+  - component: {fileID: 379648365}
+  - component: {fileID: 379648364}
+  - component: {fileID: 379648363}
   m_Layer: 5
   m_Name: Bush
   m_TagString: Untagged
@@ -215,12 +215,12 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &448725341
+--- !u!224 &379648362
 RectTransform:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 448725340}
+  m_GameObject: {fileID: 379648361}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -228,30 +228,30 @@ RectTransform:
   m_Father: {fileID: 752313532}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 720, y: 1280}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &448725342
+  m_SizeDelta: {x: 720, y: 510}
+  m_Pivot: {x: 0.5, y: 0}
+--- !u!114 &379648363
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 448725340}
+  m_GameObject: {fileID: 379648361}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61ba7caf57b8b47d0a84127729878ea3, type: 3}
+  m_Script: {fileID: 11500000, guid: b580654fcb57f47e19833d1e1f643186, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  identifier: Hotel
-  image: {fileID: 448725343}
---- !u!114 &448725343
+  identifier: Bush
+  image: {fileID: 379648364}
+--- !u!114 &379648364
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 448725340}
+  m_GameObject: {fileID: 379648361}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -265,7 +265,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1d45bead1b7f64fe7a40e32ce5635ff8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0bad6cf23a15049fda2420acb9bd4251, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -273,12 +273,12 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!222 &448725344
+--- !u!222 &379648365
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 448725340}
+  m_GameObject: {fileID: 379648361}
 --- !u!1 &481077374
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +334,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: fdfdd421550554324a2f372d80aa3bd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c6b8edbd97e3478c8bc60628cfb17c5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -416,7 +416,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: ff6abdb4abae5451199b68f7724fed4c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9bdec81861a2d433ea48d6f84312bb6b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -532,7 +532,7 @@ RectTransform:
   - {fileID: 954260795}
   - {fileID: 481077375}
   - {fileID: 579274556}
-  - {fileID: 448725341}
+  - {fileID: 379648362}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -552,8 +552,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2993a6dbafc5d4da8adc026908aac534, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hotel: {fileID: 579274559}
-  moon: {fileID: 481077378}
+  stepImages:
+  - {fileID: 481077378}
+  - {fileID: 579274559}
+  - {fileID: 379648363}
 --- !u!1 &954260794
 GameObject:
   m_ObjectHideFlags: 0
@@ -608,7 +610,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 57883635d0dc24657a1516b44139b7da, type: 3}
+  m_Sprite: {fileID: 21300000, guid: db13ec3eb12d34dc9a74c8633bb04144, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
