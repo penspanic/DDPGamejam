@@ -57,6 +57,8 @@ namespace DDP.Logic
             rooms.SetActive(true);
             doorAnimator.Play("OpenAndClose");
 
+            UI.SelectMessage.Instance.Show(0);
+
             OnVisitorCreated?.Invoke(currentVisitor);
         }
 
@@ -148,6 +150,7 @@ namespace DDP.Logic
             Debug.Log("OnRoomSelected");
             rooms.SetActive(false);
             facilities.SetActive(true);
+            UI.SelectMessage.Instance.Show(1);
         }
 
         public void OnFacilitySelected()
@@ -155,6 +158,7 @@ namespace DDP.Logic
             Debug.Log("OnFacilitySelected");
             facilities.SetActive(false);
             foods.SetActive(true);
+            UI.SelectMessage.Instance.Show(2);
         }
 
         public void OnFoodSelected()
@@ -163,6 +167,7 @@ namespace DDP.Logic
             foods.SetActive(false);
 
             HotelManager.Instance.CheckOut(currentVisitor, CalculateScore(currentVisitor) * currentVisitor.Info.VipGrade);
+            UI.SelectMessage.Instance.Hide();
             UI.PopupManager.Instance.ShowPopup(UI.PopupType.ResultPopup);
         }
 
