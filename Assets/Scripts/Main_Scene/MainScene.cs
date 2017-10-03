@@ -31,7 +31,11 @@ namespace DDP.Main_Scene
 
 		void Awake()
 		{
-			PlayerPrefs.DeleteAll();
+			// PlayerPrefs.DeleteAll();
+			#if UNITY_IOS
+			Application.targetFrameRate = 60;
+			#endif
+
 			int level = Mathf.Clamp(Logic.HotelManager.Instance.Grade, 1, 5);
 			bool isUpgrading = GradeChangeListener.Instance.isUpgrading;
 

@@ -7,10 +7,13 @@ namespace DDP.UI
     public class DropSlot : MonoBehaviour, IDropHandler
     {
         private Logic.Visitor targetVisitor;
+		private Explosion explosion;
 
         private void Awake()
         {
             targetVisitor = GetComponent<Logic.Visitor>();
+			explosion = FindObjectOfType<Explosion>();
+			explosion.Init();
         }
 
         private GameObject GetItem()
@@ -42,8 +45,8 @@ namespace DDP.UI
                 targetVisitor.SetFood(DragTarget.selectedObject.GetComponent<FoodTicket>().TargetFood);
             }
 
-
-            //targetVisitor.AttachCommand(DragTarget.selectedObject.GetComponent<Command>(), true);
+			Debug.Log(DragTarget.selectedObject.transform.position);
+			 explosion.PlayExplosion(DragTarget.selectedObject.transform.position);
         }
     }
 }

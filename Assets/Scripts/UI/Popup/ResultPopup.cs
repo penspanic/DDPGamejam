@@ -19,6 +19,7 @@ namespace DDP.UI
 
 		private Transform portraitRoot;
 		private Dictionary<string, Image> portraitDic;
+		private bool isShowed;
 
 
 		public override void PreInit()
@@ -35,6 +36,7 @@ namespace DDP.UI
 
 		public override IEnumerator ShowPopup()
 		{
+			isShowed = false;
 			var curVisitor = Logic.VisitorManager.Instance.currentVisitor;
 			var sprs = curVisitor.sprs;
 
@@ -59,6 +61,8 @@ namespace DDP.UI
 				stars[i].FireStarEffect(aniTime);
 				yield return new WaitForSeconds(aniTime);
 			}
+
+			isShowed = true;
 		}
 
 		private void AddPortrait(string identifier)
@@ -128,6 +132,9 @@ namespace DDP.UI
 
         public void OnPressedCloseButton()
         {
+			if (isShowed == false)
+				return;
+			
             Logic.VisitorManager.Instance.OnResultPopupClosed();
             PopupManager.Instance.PopHidePopup();
         }
