@@ -44,7 +44,9 @@ namespace DDP.Logic
 
         private void CreateVisitor()
         {
-            Visitor newVisitor = VisitorFactory.Instance.Create(Constants.RaceType.Human_W);
+			var visitorInfos = SdbInstance<Sdb.VisitorInfo>.GetAll();
+			var selectedInfo = visitorInfos[Random.Range(0, visitorInfos.Count)];
+			Visitor newVisitor = VisitorFactory.Instance.Create(selectedInfo.RaceType);
             newVisitor.MoveToCounter(VisitorFactory.Instance.CounterPosition);
             IsVisitorProcessed = false;
 

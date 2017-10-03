@@ -26,6 +26,14 @@ namespace DDP
 
             return sdbDatas[id];
         }
+
+		public static List<T> GetAll()
+		{
+			List<T> values = new List<T>();
+			values.AddRange(sdbDatas.Values);
+
+			return values;
+		}
     }
 
     public static class SpecificSdb<T> where T : UnityEngine.ScriptableObject
