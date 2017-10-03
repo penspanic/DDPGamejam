@@ -37,11 +37,12 @@ namespace DDP.Logic
 
 		public void ApplySpriteSources(Constants.RaceType raceType)
 		{
-			string filePath = "Sprites/Character/" + raceType.ToString();
+			string filePath = "Sprites/Character/" + raceType.ToString().Split('_')[0];
+			string gender = raceType.ToString().Split('_')[1];
 
 			var sprites = Resources.LoadAll<Sprite>(filePath);
 			if (sprites == null || sprites.Length == 0)
-				throw new UnityException("Don't have Resources!!");
+				throw new UnityException("Don't have Resources!!, path: " + filePath);
 
 			sprs.Clear();
 			for (int i = 0; i < sprRenders.Length; ++i)
@@ -50,10 +51,43 @@ namespace DDP.Logic
 
 				for (int j = 0; j < sprites.Length; ++j)
 				{
-					if (sprRenders[i].name == sprites[j].name)
+					var sprName = sprites[j].name;
+					var split = sprName.Split('_');
+
+					if (split.Length >= 2)
 					{
-						sprRenders[i].sprite = sprites[j];
-						sprs.Add(sprites[j].name, sprites[j]);
+						if (sprRenders[i].name == split[0])
+						{
+							if (split[1] == "M" || split[1] == "W")
+							{
+								if (gender == "M" && split[1] == "M")
+								{
+									sprRenders[i].sprite = sprites[j];
+									sprs.Add(split[0], sprites[j]);
+								}
+								else if (gender == "W" && split[1] == "W")
+								{
+									sprRenders[i].sprite = sprites[j];
+									sprs.Add(split[0], sprites[j]);
+								}
+								
+							}
+							else if (split[0] == "Eyes")
+							{
+								if (split[1] == "Default")
+									sprRenders[i].sprite = sprites[j];
+
+								sprs.Add(split[1], sprites[j]);
+							}
+						}
+					}
+					else
+					{
+						if (sprRenders[i].name == sprName)
+						{
+							sprRenders[i].sprite = sprites[j];
+							sprs.Add(sprName, sprites[j]);
+						}
 					}
 				}
 			}

@@ -376,6 +376,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f13f0ef134cde8441a2a0f7502aa8a37, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rooms: {fileID: 0}
+  facilities: {fileID: 0}
+  foods: {fileID: 0}
 --- !u!1 &2052283397
 GameObject:
   m_ObjectHideFlags: 0

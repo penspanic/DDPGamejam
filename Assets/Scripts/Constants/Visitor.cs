@@ -5,6 +5,8 @@
         Undefined = 0,
         Human_M,		// 인간
         Human_W,
+		Goblin_M,
+		Goblin_W,
 		Asmodian_M,		// 마족
 		Asmodian_W,
 		Dracula_M,		// 드라큘라
