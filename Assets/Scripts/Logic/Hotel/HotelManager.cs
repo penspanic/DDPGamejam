@@ -48,7 +48,14 @@ namespace DDP.Logic
 
             if(originalGrade != newGrade)
             {
-				OnGradeChanged?.Invoke(newGrade, originalGrade);
+                if(originalGrade > newGrade)
+                {
+                    Score = gradeInfo.Grades[originalGrade - 1].X;
+                }
+                else
+                {
+				    OnGradeChanged?.Invoke(newGrade, originalGrade);
+                }
             }
 			if (newGrade > originalGrade)
 			{

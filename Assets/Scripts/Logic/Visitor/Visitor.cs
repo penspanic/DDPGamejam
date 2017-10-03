@@ -104,7 +104,7 @@ namespace DDP.Logic
 
             if(Info.EnterMessages.Length > 0)
             {
-                UI.MessageBallon.Show(this.transform, new Vector3(0f, 3.5f, 0f), Info.EnterMessages[Random.Range(0, Info.EnterMessages.Length)], 8f);
+                UI.MessageBallon.Show(this.transform, new Vector3(0f, 3.5f, 0f), Info.EnterMessages[Random.Range(0, Info.EnterMessages.Length)], 999999f);
             }
         }
 

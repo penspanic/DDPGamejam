@@ -38,4 +38,11 @@
         Annoyed,
         Delighted,
     }
+
+    public enum SexType
+    {
+        Undefined = 0,
+        Male,
+        Female,
+    }
 }

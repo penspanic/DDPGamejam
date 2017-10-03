@@ -16,6 +16,9 @@ namespace DDP.Logic
 		public Visitor currentVisitor { get; private set; }
         public int VisitorRating { get { return GetStarAmount(CalculateScore(currentVisitor)); } }
         public bool IsVisitorProcessed { get; private set; }
+
+        public event System.Action<Logic.Visitor> OnVisitorCreated;
+
         protected override void Awake()
         {
             base.Awake();
@@ -48,6 +51,8 @@ namespace DDP.Logic
 			currentVisitor = newVisitor;
 
             rooms.SetActive(true);
+
+            OnVisitorCreated?.Invoke(currentVisitor);
         }
 
         private int CalculateScore(Logic.Visitor visitor)
@@ -83,7 +88,6 @@ namespace DDP.Logic
                 score -= scoreValue;
             }
 
-            score *= 10;
             return score;
         }
 
@@ -153,7 +157,7 @@ namespace DDP.Logic
             Debug.Log("OnFoodSelected");
             foods.SetActive(false);
 
-            HotelManager.Instance.CheckOut(currentVisitor, CalculateScore(currentVisitor));
+            HotelManager.Instance.CheckOut(currentVisitor, CalculateScore(currentVisitor) * currentVisitor.Info.VipGrade);
             UI.PopupManager.Instance.ShowPopup(UI.PopupType.ResultPopup);
         }
 

@@ -15,6 +15,10 @@ namespace DDP.Sdb
         public Constants.FoodType LikeFood;
         public Constants.FoodType HateFood;
         public string Name;
+        public Constants.SexType Sex;
+        public string RaceName;
+        public string JobName;
+        public string AttributeDescription;
         public int VipGrade;
         public string[] EnterMessages;
         public string[] SuccessMessages;
