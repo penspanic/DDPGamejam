@@ -28,8 +28,6 @@ namespace DDP.UI
 			gameObject.SetActive(true);
 
 			transform.rotation = new Quaternion(0, 0, 0.8f, 1f);
-
-			Debug.Log(transform.rotation.eulerAngles.z);
 			transform.localScale = new Vector3(8, 8, 8);
 			image.color = new Color(1, 1, 1, 0);
 

@@ -27,8 +27,6 @@ namespace DDP.UI
 			AddPortrait("Head");
 			AddPortrait("Hair");
 			AddPortrait("Eyes");
-
-
 		}
 
 		public override IEnumerator ShowPopup()
@@ -36,11 +34,9 @@ namespace DDP.UI
 			var curVisitor = Logic.VisitorManager.Instance.curVisitor;
 			var sprs = curVisitor.sprs;
 
-			foreach (KeyValuePair<string, Sprite> div in sprs)
-			{
-				portraitDic[div.Key].sprite = div.Value;
-			}
+			ApplyCharImg(sprs);
 
+			// Stars
 			for (int i = 0; i < stars.Length; ++i)
 			{
 				stars[i].InitStar();
@@ -61,6 +57,44 @@ namespace DDP.UI
 		private void AddPortrait(string identifier)
 		{
 			portraitDic.Add(identifier, portraitRoot.Find(identifier).GetComponent<Image>());
+		}
+
+		private void AddEyeEmotion()
+		{
+			var img = portraitRoot.Find("Eyes").GetComponent<Image>();
+			portraitDic.Add("Happy", img);
+			portraitDic.Add("Sad", img);
+			portraitDic.Add("Angry", img);
+		}
+
+		private void ApplyCharImg(Dictionary<string, Sprite> sprDic)
+		{
+			// Body And Head
+			foreach (KeyValuePair<string, Sprite> div in sprDic)
+			{
+				if (portraitDic.ContainsKey(div.Key) == false)
+					continue;
+
+				portraitDic[div.Key].sprite = div.Value;
+				portraitDic[div.Key].SetNativeSize();
+			}
+
+			// Emotion
+			int rate = 3;
+			ApplyEmotion(rate, sprDic);
+		}
+
+		private void ApplyEmotion(int rate, Dictionary<string, Sprite> sprDic)
+		{
+			var eyeImg = portraitDic["Eyes"];
+
+			if (rate <= 3)
+				eyeImg.sprite = Random.Range(0, 2) == 0 ? sprDic["Angry"] : sprDic["Sad"];
+			else
+				eyeImg.sprite = sprDic["Happy"];
+
+			eyeImg.SetNativeSize();
+			
 		}
 	}
 }

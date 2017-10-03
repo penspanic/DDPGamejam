@@ -68,6 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4299b06e672b4580ba9f13982ccae46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  group: {fileID: 225609190201983676}
   dimmingImg: {fileID: 114724634067616876}
 --- !u!222 &222621726823115154
 CanvasRenderer:
