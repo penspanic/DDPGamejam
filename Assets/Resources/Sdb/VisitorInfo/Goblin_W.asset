@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8647eec085dbf774684b29a462ea3462, type: 3}
+  m_Name: Goblin_W
+  m_EditorClassIdentifier: 
+  Id: Goblin_W
+  RaceType: 4
+  AttributeType: 4
+  LikeFacility: 4
+  LikeFood: 2
+  Name: "\uC5D0\uBC00\uB9AC"
+  VipGrade: 2
+  EnterMessages:
+  - "\uB0B4\uAC00 \uB3C8\uC5D0 \uBBF8\uCCE4\uB2E4\uB294 \uC774\uC57C\uAE30\uB97C \uB4E3\uAE34
+    \uD558\uC9C0\uB9CC \uBA85\uD488\uC5D0 \uB300\uD55C \uB208\uC740 \uB204\uAD6C\uBCF4\uB2E4
+    \uB6F0\uC5B4\uB098\uC9C0,"
+  - "\uC548\uB155~ \uACE0\uBE14\uB9B0\uC740 \uC791\uC9C0\uB9CC, \uB0B4 \uC8FC\uBA38\uB2C8\uB294
+    \uC791\uC9C0 \uC54A\uC744\uAC78? \uC5B4\uC90D\uC796\uC740 \uC2F8\uAD6C\uB824 \uC0C1\uD488\uC744
+    \uAC00\uC838\uC654\uB2E4\uAC04 \uBC14\uB85C \uC0AC\uC7A5\uC744 \uBD80\uB974\uACA0\uC5B4"
+  SuccessMessages:
+  - "\uC0DD\uC120! \uBA85\uD488! \uCD5C\uACE0\uC57C! "
+  - "\uC7A5\uC778\uC758 \uC19C\uC528\uAC00 \uB290\uAEF4\uC9C0\uB294\uAD70, \uAE08\uD654\uAC00
+    \uC544\uAE5D\uC9C0 \uC54A\uC544"
+  FailMessages:
+  - "\uC5C9\uB9DD\uC774\uC57C, \uCC28\uB77C\uB9AC \uB9C8\uCC28\uC5D0\uC11C \uC790\uACE0
+    \uB3C8\uC744 \uC544\uB07C\uACA0\uC5B4"
+  - "\uB3C4\uB451\uACE0\uC591\uC774 \uAC19\uC774 \uB3C8\uC744 \uBE7C\uAC00\uB824\uACE0
+    \uD558\uB2E4\uB2C8"
