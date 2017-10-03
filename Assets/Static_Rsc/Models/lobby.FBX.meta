@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 22161cb306f5fae45ba17aeda124bdcc
-timeCreated: 1507001922
+guid: db7e69c7a02b92d478fa559b7be0e823
+timeCreated: 1507006878
 licenseType: Free
 ModelImporter:
   serializedVersion: 21
@@ -29,16 +29,13 @@ ModelImporter:
     100042: flag
     100044: floor
     100046: //RootNode
-    100048: Object004
-    100050: Object011
-    100052: Object012
-    100054: photo
-    100056: pillar_1
-    100058: pillar_2
-    100060: table_005
-    100062: table_2
-    100064: table_3
-    100066: table_4
+    100048: photo
+    100050: pillar_2
+    100052: table_005
+    100054: table_2
+    100056: table_3
+    100058: table_4
+    100060: wall
     400000: carpet
     400002: chair_007
     400004: chair_008
@@ -63,16 +60,13 @@ ModelImporter:
     400042: flag
     400044: floor
     400046: //RootNode
-    400048: Object004
-    400050: Object011
-    400052: Object012
-    400054: photo
-    400056: pillar_1
-    400058: pillar_2
-    400060: table_005
-    400062: table_2
-    400064: table_3
-    400066: table_4
+    400048: photo
+    400050: pillar_2
+    400052: table_005
+    400054: table_2
+    400056: table_3
+    400058: table_4
+    400060: wall
     2300000: carpet
     2300002: chair_007
     2300004: chair_008
@@ -96,16 +90,13 @@ ModelImporter:
     2300040: door_right 1
     2300042: flag
     2300044: floor
-    2300046: Object004
-    2300048: Object011
-    2300050: Object012
-    2300052: photo
-    2300054: pillar_1
-    2300056: pillar_2
-    2300058: table_005
-    2300060: table_2
-    2300062: table_3
-    2300064: table_4
+    2300046: photo
+    2300048: pillar_2
+    2300050: table_005
+    2300052: table_2
+    2300054: table_3
+    2300056: table_4
+    2300058: wall
     3300000: carpet
     3300002: chair_007
     3300004: chair_008
@@ -129,49 +120,43 @@ ModelImporter:
     3300040: door_right 1
     3300042: flag
     3300044: floor
-    3300046: Object004
-    3300048: Object011
-    3300050: Object012
-    3300052: photo
-    3300054: pillar_1
-    3300056: pillar_2
-    3300058: table_005
-    3300060: table_2
-    3300062: table_3
-    3300064: table_4
+    3300046: photo
+    3300048: pillar_2
+    3300050: table_005
+    3300052: table_2
+    3300054: table_3
+    3300056: table_4
+    3300058: wall
     4300000: table_4
     4300002: chair_6
     4300004: door_right
-    4300006: Object004
-    4300008: pillar_1
-    4300010: floor
-    4300012: carpet
-    4300014: table_2
-    4300016: table_3
-    4300018: chair_2
-    4300020: chair_4
-    4300022: door_right
-    4300024: Object011
-    4300026: Object012
-    4300028: flag
-    4300030: chair_007
-    4300032: chair_008
-    4300034: table_005
-    4300036: chair_009
-    4300038: chair_010
-    4300040: chair_011
-    4300042: cushion001
-    4300044: chair_012
-    4300046: chair_013
-    4300048: chair_014
-    4300050: chair_015
-    4300052: chair_016
-    4300054: chair_017
-    4300056: chair_018
-    4300058: chair_019
-    4300060: cushion002
-    4300062: pillar_2
-    4300064: photo
+    4300006: wall
+    4300008: floor
+    4300010: carpet
+    4300012: table_2
+    4300014: table_3
+    4300016: chair_2
+    4300018: chair_4
+    4300020: door_right
+    4300022: flag
+    4300024: chair_007
+    4300026: chair_008
+    4300028: table_005
+    4300030: chair_009
+    4300032: chair_010
+    4300034: chair_011
+    4300036: cushion001
+    4300038: chair_012
+    4300040: chair_013
+    4300042: chair_014
+    4300044: chair_015
+    4300046: chair_016
+    4300048: chair_017
+    4300050: chair_018
+    4300052: chair_019
+    4300054: cushion002
+    4300056: pillar_2
+    4300058: photo
     9500000: //RootNode
   materials:
     importMaterials: 1
