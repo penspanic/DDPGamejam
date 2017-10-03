@@ -84,6 +84,27 @@ namespace DDP.Logic
             return 1;
         }
 
+		public string GetResultMessage()
+		{
+			int rating = VisitorRating;
+			string[] messages = null;
+			if (rating <= 3)
+			{
+				messages = currentVisitor.Info.FailMessages;
+			}
+			else
+			{
+				messages = currentVisitor.Info.SuccessMessages;
+			}
+
+			if (messages.Length == 0)
+			{
+				return string.Empty;
+			}
+
+			return messages[Random.Range(0, messages.Length)];
+		}
+
         public void OnRoomSelected()
         {
             Debug.Log("OnRoomSelected");

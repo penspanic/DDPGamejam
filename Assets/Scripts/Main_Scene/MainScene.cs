@@ -17,7 +17,7 @@ namespace DDP.Main_Scene
 		void Awake()
 		{
 			string prefix = "Sprites/Main/";
-			int level = Logic.HotelManager.Instance.Grade;
+			int level = Mathf.Clamp(Logic.HotelManager.Instance.Grade, 1, 5);
 			bool isUpgrading = GradeChangeListener.Instance.isUpgrading;
 
 			for (int i = 0; i < stepImages.Length; ++i)
@@ -32,6 +32,11 @@ namespace DDP.Main_Scene
 		private IEnumerator ShowMainSceneRoutine()
 		{
 			yield return null;
+		}
+
+		public void OnPressedStartButton()
+		{
+			SceneManager.Instance.ChangeScene("Lobby");
 		}
 
 	}

@@ -42,6 +42,8 @@ namespace DDP.UI
 				stars[i].InitStar();
 			}
 
+			// evalText
+			evaluationText.text = Logic.VisitorManager.Instance.GetResultMessage();
 
 			yield return base.ShowPopup();
 
@@ -69,24 +71,32 @@ namespace DDP.UI
 
 		private void ApplyCharImg(Dictionary<string, Sprite> sprDic)
 		{
+			foreach (KeyValuePair<string, Image> div in portraitDic)
+			{
+				div.Value.enabled = false;
+			}
+
 			// Body And Head
 			foreach (KeyValuePair<string, Sprite> div in sprDic)
 			{
+				
 				if (portraitDic.ContainsKey(div.Key) == false)
 					continue;
-
+				
+				portraitDic[div.Key].enabled = true;
 				portraitDic[div.Key].sprite = div.Value;
 				portraitDic[div.Key].SetNativeSize();
 			}
 
 			// Emotion
-			int rate = 3;
+			int rate = Logic.VisitorManager.Instance.VisitorRating;
 			ApplyEmotion(rate, sprDic);
 		}
 
 		private void ApplyEmotion(int rate, Dictionary<string, Sprite> sprDic)
 		{
 			var eyeImg = portraitDic["Eyes"];
+			eyeImg.enabled = true;
 
 			if (rate <= 3)
 				eyeImg.sprite = Random.Range(0, 2) == 0 ? sprDic["Angry"] : sprDic["Sad"];
