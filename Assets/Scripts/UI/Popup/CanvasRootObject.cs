@@ -9,14 +9,8 @@ namespace DDP.UI
 	[RequireComponent(typeof(CanvasGroup))]
 	public class CanvasRootObject : MonoBehaviour
 	{
+		[SerializeField]
 		protected CanvasGroup group;
-
-		protected virtual void Awake()
-		{
-			group = GetComponent<CanvasGroup>();
-		}
-
-
 
 		public void SetActiveCanvasGroup(bool enable, float fadeTime = 0.0f)
 		{

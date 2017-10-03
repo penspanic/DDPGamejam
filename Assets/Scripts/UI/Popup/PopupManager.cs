@@ -26,10 +26,12 @@ namespace DDP.UI
 	public class PopupManager : Singleton<PopupManager>
 	{
 		[SerializeField]
-		private PopupDictionary popupDic;
+		private PopupDictionary popupPrefabDic;
+
 		[SerializeField]
 		private Dimming dimmingPrefab;
 
+		private PopupDictionary popupDic;
 		private bool isTransition;
 
 		public Stack<PopupType> popupStack { get; private set; }
@@ -43,19 +45,23 @@ namespace DDP.UI
 		{
 			popupStack = new Stack<PopupType>();
 			popupQueue = new Queue<PopupType>();
+			popupDic = new PopupDictionary();
 
 			// Dimming
 			dimmingPool = new GameObjectPool<Dimming>(dimmingPrefab, "dimming", transform, popupDic.Count, 5);
 			dimmingStack = new Stack<Dimming>();
 
-			foreach (KeyValuePair<PopupType, PopupBase> div in popupDic)
+			foreach (KeyValuePair<PopupType, PopupBase> div in popupPrefabDic)
 			{
 				if (div.Value == null)
 					continue;
 
-				div.Value.PreInit();
 
-				// dimmingPool.Add();
+				var popup = Instantiate(div.Value, transform, false);
+				popup.PreInit();
+
+				popupDic.Add(div.Key, popup);
+				Debug.Log("AAAA");
 			}
 
 			isTransition = false;
