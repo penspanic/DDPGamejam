@@ -12,10 +12,12 @@ namespace DDP.Main_Scene
 		private StepImage[] stepImages;
 
 
+		// private bool is
+
 		void Awake()
 		{
 			string prefix = "Sprites/Main/";
-			int level = 2;
+			int level = Logic.HotelManager.Instance.Grade;
 
 			for (int i = 0; i < stepImages.Length; ++i)
 			{
