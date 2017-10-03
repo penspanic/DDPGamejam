@@ -5,16 +5,15 @@ using UnityEngine.Rendering;
 
 namespace DDP.Logic
 {
-    public class Visitor : MonoBehaviour, ISynableObject
+    public class Visitor : MonoBehaviour
     {
-		public Data.Visitor Data { get { return _data; } set { _data = value; } }
-        private Data.Visitor _data;
-
 		[SerializeField]
 		private SpriteRenderer[] sprRenders;
         [SerializeField]
         private SortingGroup sortingGroup;
 
+        public int Serial { get; set; }
+        public Sdb.VisitorInfo Info { get; set; }
 		public Dictionary<string, Sprite> sprs { get; private set; }
         public Constants.AttributeType SelectedAttribute { get; private set; }
         public Constants.FacilityType SelectedFacility { get; private set; }
@@ -23,16 +22,6 @@ namespace DDP.Logic
         private void Awake()
         {
 			sprs = new Dictionary<string, Sprite>();
-        }
-
-        public void Sync(ISyncableData data)
-        {
-            _data = (Data.Visitor)data;
-        }
-
-        public void SetSerial(int serial)
-        {
-            _data.Serial = serial;
         }
 
 		public void ApplySpriteSources(Constants.RaceType raceType)
@@ -92,7 +81,7 @@ namespace DDP.Logic
 				}
 			}
 
-			sortingGroup.sortingOrder = -_data.Serial;
+			sortingGroup.sortingOrder = -Serial;
 		}
 
         public void MoveToCounter(Vector3 endPosition)
@@ -112,6 +101,11 @@ namespace DDP.Logic
                 yield return null;
             }
             transform.position = endPos;
+
+            if(Info.EnterMessages.Length > 0)
+            {
+                UI.MessageBallon.Show(this.transform, new Vector3(0f, 3.5f, 0f), Info.EnterMessages[Random.Range(0, Info.EnterMessages.Length)], 8f);
+            }
         }
 
         public void SetRoom(Constants.AttributeType attribute)
@@ -131,10 +125,5 @@ namespace DDP.Logic
             this.SelectedFood = food;
             VisitorManager.Instance.OnFoodSelected();
         }
-
-		public SpriteRenderer[] GetRenderers()
-		{
-			return sprRenders;
-		}
     }
 }

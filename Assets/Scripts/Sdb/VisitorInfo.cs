@@ -12,7 +12,9 @@ namespace DDP.Sdb
 		public Constants.FacilityType LikeFacility;
         public Constants.FoodType LikeFood;
         public string Name;
-        public int StayTime;
         public int VipGrade;
+        public string[] EnterMessages;
+        public string[] SuccessMessages;
+        public string[] FailMessages;
     }
 }

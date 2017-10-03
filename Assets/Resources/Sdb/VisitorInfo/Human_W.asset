@@ -17,5 +17,9 @@ MonoBehaviour:
   LikeFacility: 2
   LikeFood: 1
   Name: "\uAE40\uC544\uBB34\uAC1C"
-  StayTime: 30
   VipGrade: 0
+  EnterMessages:
+  - sadasdsadasdsafsaad132
+  - sadasdsadasdsafsaad132
+  SuccessMessages: []
+  FailMessages: []

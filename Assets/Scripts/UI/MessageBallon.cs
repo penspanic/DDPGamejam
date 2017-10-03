@@ -4,25 +4,27 @@ using System.Collections;
 
 namespace DDP.UI
 {
-    [RequireComponent(typeof(Text))]
     public class MessageBallon : MonoBehaviour
     {
+        [SerializeField]
         private Text messageText;
         private void Awake()
         {
-            messageText = GetComponent<Text>();
         }
 
-        public void Show(string message, float time)
+        public static void Show(Transform parent, Vector3 localPos, string message, float time)
         {
-
+            MessageBallon ballonInstance = Instantiate(Resources.Load<GameObject>("Prefabs/UI/MessageBallon")).GetComponent<MessageBallon>();
+            ballonInstance.messageText.text = message;
+            ballonInstance.StartCoroutine(ballonInstance.ShowProcess(time));
+            ballonInstance.transform.SetParent(parent);
+            ballonInstance.transform.localPosition = localPos;
         }
 
         private IEnumerator ShowProcess(float time)
         {
-            this.gameObject.SetActive(true);
             yield return new WaitForSeconds(time);
-            this.gameObject.SetActive(false);
+            Destroy(this.gameObject);
         }
     }
 }

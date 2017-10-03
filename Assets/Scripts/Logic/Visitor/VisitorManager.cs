@@ -52,7 +52,7 @@ namespace DDP.Logic
 
         private int CalculateScore(Logic.Visitor visitor)
         {
-            Constants.RaceType raceType = visitor.Data.RaceType;
+            Constants.RaceType raceType = visitor.Info.RaceType;
             Sdb.VisitorInfo visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(raceType.ToString());
             int score = 0;
             score += visitor.SelectedAttribute == visitorInfo.AttributeType ? 1 : -1;

@@ -26,13 +26,8 @@ namespace DDP.Logic
             Visitor visitorInstance = Instantiate(visitorPrefab).GetComponent<Visitor>();
 			var visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(raceType.ToString());
 
-
-			// CreateData
-			Data.Visitor visitor = new Data.Visitor();
-			visitor.RaceType = raceType;
-			visitor.Serial = serialGenerator.Get();
-
-			visitorInstance.Data = visitor;
+            visitorInstance.Info = visitorInfo;
+            visitorInstance.Serial = serialGenerator.Get();
 
 			visitorInstance.ApplySpriteSources(raceType);
             visitorInstance.transform.position = visitorCreateTransform.position;

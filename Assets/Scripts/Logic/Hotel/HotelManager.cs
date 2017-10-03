@@ -40,9 +40,10 @@ namespace DDP.Logic
 
         public void CheckOut(Visitor visitor, int visitorScore)
         {
+            var visitorInfo = SdbInstance<Sdb.VisitorInfo>.Get(visitor.Info.RaceType.ToString());
             var gradeInfo = SpecificSdb<Sdb.HotelGradeInfo>.Get();
             int originalGrade = gradeInfo.GetGrade(Score);
-            Score += visitorScore;
+            Score += visitorScore * visitorInfo.VipGrade;
             int newGrade = gradeInfo.GetGrade(Score);
 
             if(originalGrade != newGrade)

@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: 2c718564c37f7c74387b5f8db2a016aa
+timeCreated: 1507011013
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: wiggle hangeul
+  fontNames:
+  - wiggle hangeul
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
