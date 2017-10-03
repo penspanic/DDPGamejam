@@ -9,19 +9,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8647eec085dbf774684b29a462ea3462, type: 3}
-  m_Name: Human_W
+  m_Name: Asmodian_W
   m_EditorClassIdentifier: 
-  Id: Human_W
-  RaceType: 2
-  Attributes: 02000000030000000400000001000000
-  Facilities: 02000000010000000400000003000000
-  Foods: 01000000040000000200000003000000
-  Name: "\uCE90\uC11C\uB9B0"
+  Id: Asmodian_W
+  RaceType: 6
+  Attributes: 03000000010000000200000004000000
+  Facilities: 01000000030000000400000002000000
+  Foods: 04000000010000000300000002000000
+  Name: "\uB9B4\uB9AC\uC2A4"
   Sex: 2
-  RaceName: "\uC778\uAC04"
-  JobName: "\uADC0\uC871"
-  AttributeDescription: "\uCC9C\uC9C4\uB09C\uB9CC\uD55C \uC0AC\uAD50\uD615"
-  VipGrade: 4
+  RaceName: "\uB9C8\uC871"
+  JobName: "\uC74C\uC545\uAC00"
+  AttributeDescription: "\uC5F4\uC815\uC801\uC778 \uD65C\uB3D9\uAC00\uD615"
+  VipGrade: 3
   EnterMessages:
   - "\uADC0\uC871\uC0DD\uD65C\uC740 \uC815\uB9D0 \uCD5C\uC545\uC774\uC5D0\uC694, \uB9E4\uC77C\uB9E4\uC77C
     \uC6B4\uB3D9\uC744 \uC2DC\uD0A4\uACE0 \uC57C\uCC44\uB9CC \uBA39\uC774\uB2E4\uB2C8,

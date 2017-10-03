@@ -13,10 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: Human_M
   RaceType: 1
-  AttributeType: 2
-  LikeFacility: 2
-  LikeFood: 1
-  Name: "\uC81C\uC774\uCF65"
+  Attributes: 02000000030000000400000001000000
+  Facilities: 02000000010000000400000003000000
+  Foods: 01000000040000000200000003000000
+  Name: "\uD504\uB808\uB4DC\uB9AD"
+  Sex: 1
+  RaceName: "\uC778\uAC04"
+  JobName: "\uADC0\uC871"
+  AttributeDescription: "\uC624\uB9CC\uD55C \uAD8C\uB825\uC790\uD615"
   VipGrade: 4
   EnterMessages:
   - "\uC774\uACF3\uB3C4 \uC624\uB7AC\uB9CC\uC774\uAD70, \uC774\uC804 \uC9C0\uBC30\uC778\uC740
@@ -27,8 +31,11 @@ MonoBehaviour:
   SuccessMessages:
   - "\uD6CC\uB96D\uD558\uAD70, \uC218\uB3C4\uC5D0 \uC54C\uB824\uC9C4 \uBA85\uC131\uC744
     \uB6F0\uC5B4\uB118\uB294 \uC218\uC900\uC774\uC57C"
-  - "\uC74C \uB9CC\uC871\uC2A4\uB7FD\uAD70, \uC774 \uB098\uB97C \uB9CC\uC871\uC2DC\uD0A4\uB2E4\uB2C8
+  - "\uB9CC\uC871\uC2A4\uB7FD\uAD70, \uB098\uB97C \uB9CC\uC871\uC2DC\uD0A4\uB2E4\uB2C8
     \uC790\uB791\uC2A4\uB7FD\uAC8C \uC0DD\uAC01\uD558\uAC8C"
+  NormalMessages:
+  - "\uC544\uC26C\uC6B4 \uBD80\uBD84\uC774 \uC788\uC9C0\uB9CC, \uB9CC\uC871\uC2A4\uB7EC\uC6E0\uB124"
+  - "\uC775\uC219\uD55C \uC11C\uBE44\uC2A4\uB85C\uAD70, \uD558\uC9C0\uB9CC \uC9C4\uBD80\uD574"
   FailMessages:
   - "\uC774\uB7F0, \uCD5C\uACE0\uC758 \uD638\uD154\uC774\uB77C\uB294 \uBA85\uC131\uB3C4
     \uBC14\uB2E5\uC5D0 \uB5A8\uC5B4\uC84C\uAD70"

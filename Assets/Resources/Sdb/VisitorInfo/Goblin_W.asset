@@ -13,10 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: Goblin_W
   RaceType: 4
-  AttributeType: 4
-  LikeFacility: 4
-  LikeFood: 2
-  Name: "\uC5D0\uBC00\uB9AC"
+  Attributes: 04000000030000000100000002000000
+  Facilities: 04000000010000000200000003000000
+  Foods: 02000000030000000100000004000000
+  Name: "\uD638\uBC14\uD2B8"
+  Sex: 2
+  RaceName: "\uACE0\uBE14\uB9B0"
+  JobName: "\uC0AC\uC5C5\uAC00"
+  AttributeDescription: "\uD604\uC2E4\uC801\uC778 \uC0AC\uC5C5\uAC00\uD615"
   VipGrade: 2
   EnterMessages:
   - "\uB0B4\uAC00 \uB3C8\uC5D0 \uBBF8\uCCE4\uB2E4\uB294 \uC774\uC57C\uAE30\uB97C \uB4E3\uAE34
@@ -29,6 +33,9 @@ MonoBehaviour:
   - "\uC0DD\uC120! \uBA85\uD488! \uCD5C\uACE0\uC57C! "
   - "\uC7A5\uC778\uC758 \uC19C\uC528\uAC00 \uB290\uAEF4\uC9C0\uB294\uAD70, \uAE08\uD654\uAC00
     \uC544\uAE5D\uC9C0 \uC54A\uC544"
+  NormalMessages:
+  - 
+  - 
   FailMessages:
   - "\uC5C9\uB9DD\uC774\uC57C, \uCC28\uB77C\uB9AC \uB9C8\uCC28\uC5D0\uC11C \uC790\uACE0
     \uB3C8\uC744 \uC544\uB07C\uACA0\uC5B4"
