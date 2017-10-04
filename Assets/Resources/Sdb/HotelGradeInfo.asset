@@ -13,12 +13,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Grades:
   - X: 0
-    Y: 99
-  - X: 100
-    Y: 299
-  - X: 300
-    Y: 599
-  - X: 600
     Y: 999
   - X: 1000
-    Y: 1599
+    Y: 2999
+  - X: 3000
+    Y: 5999
+  - X: 6000
+    Y: 9999
+  - X: 10000
+    Y: 10000000
