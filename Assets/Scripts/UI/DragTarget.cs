@@ -26,6 +26,8 @@ namespace DDP.UI
                 return;
             }
 
+            SfxManager.Instance.Play(SfxType.UI_DragStart);
+
             OnDragBegin?.Invoke();
 
             selectedObject = this;
@@ -42,13 +44,12 @@ namespace DDP.UI
 
             Vector2 mousePos = Input.mousePosition;
             this.transform.position = CameraUtil.GetWorldPositionOnPlane(mousePos, 2f);
-            //Vector2 point;
-            //RectTransformUtility.ScreenPointToLocalPointInRectangle(rectTransform.parent.GetComponent<RectTransform>(), Input.mousePosition, Camera.main, out point);
-            //rectTransform.anchoredPosition = point;
         }
 
         public void OnEndDrag(PointerEventData eventData)
         {
+            SfxManager.Instance.Play(SfxType.UI_DragEnd);
+
             OnDragEnd?.Invoke();
 
             selectedObject = null;

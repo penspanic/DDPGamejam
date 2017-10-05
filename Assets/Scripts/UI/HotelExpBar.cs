@@ -23,7 +23,6 @@ namespace DDP.UI
 
         private void OnExpRateChanged(float rate)
         {
-			Debug.Log("Rate: " + rate);
             fillImage.fillAmount = rate;
         }
     }

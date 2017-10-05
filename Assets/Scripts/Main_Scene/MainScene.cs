@@ -31,7 +31,7 @@ namespace DDP.Main_Scene
 
 		void Awake()
 		{
-			// PlayerPrefs.DeleteAll();
+			//PlayerPrefs.DeleteAll();
 			#if UNITY_IOS
 			Application.targetFrameRate = 60;
 			#endif
@@ -39,34 +39,17 @@ namespace DDP.Main_Scene
 			int level = Mathf.Clamp(Logic.HotelManager.Instance.Grade, 1, 5);
 			bool isUpgrading = GradeChangeListener.Instance.isUpgrading;
 
-			//int level = 5;
-			//bool isUpgrading = true;
-
-
 			moon.InitBeforeAni();
 			title.InitBeforeAni();
 			buttons.InitBeforeAni();
-
 
 			if (isUpgrading)
 				upgradeObjs.InitBeforeAni(level);
 			else
 				upgradeObjs.gameObject.SetActive(false);
-			//if (isUpgrading == true)
-			//{
-			//	upgradeObjs.OnChangeStepImage += OnChangeStepImage;
-
-			//	OnChangeStepImage(level - 1);
-			//	upgradeObjs.InitBeforeAni(level);
-			//	StartCoroutine(upgradeObjs.PlayShowAnimation());
-			//}
-			//else
-			//{
-			//	OnChangeStepImage(level);
 
 			StartCoroutine(ShowMainSceneRoutine(level, isUpgrading));
 			GradeChangeListener.Instance.isUpgrading = false;
-			// }
 		}
 
 
@@ -100,11 +83,13 @@ namespace DDP.Main_Scene
 
 		public void OnPressedStartButton()
 		{
+            SfxManager.Instance.Play(SfxType.UI_Click2);
 			SceneManager.Instance.ChangeScene("Lobby");
 		}
 		public void OnPressedCredit()
 		{
-			Credit.Instance.Show();
+            SfxManager.Instance.Play(SfxType.UI_Click3);
+            Credit.Instance.Show();
 		}
 
 		public void OnChangeStepImage(int grade)

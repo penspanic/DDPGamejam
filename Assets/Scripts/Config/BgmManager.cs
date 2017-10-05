@@ -4,11 +4,10 @@ using System.Collections.Generic;
 
 public enum BgmType
 {
-    //Main,
-    //Select,
-    //InGame1,
-    //InGame2,
-    //GameOver,
+    Undefined = 0,
+    Main,
+    Lobby,
+    End_Of_Bgm
 }
 
 public class BgmManager : Singleton<BgmManager>
@@ -20,20 +19,29 @@ public class BgmManager : Singleton<BgmManager>
     {
         base.Awake();
         DontDestroyOnLoad(this.gameObject);
+
+        Initialize();
+
         bgmSource = gameObject.AddComponent<AudioSource>();
         bgmSource.loop = true;
 
         SoundManager.Instance.OnBgmVolumeChanged += OnBgmVolumeChanged;
     }
 
-    public void LoadClips()
+    public void Initialize()
     {
-        //bgmClips.Add(BgmType.Main, Resources.Load<AudioClip>("Sounds/Bgm/BGM_MainMenu"));
-        //bgmClips.Add(BgmType.Select, Resources.Load<AudioClip>("Sounds/Bgm/BGM_Select_1"));
-        //bgmClips.Add(BgmType.InGame1, Resources.Load<AudioClip>("Sounds/Bgm/BGM_InGame_1"));
-        //bgmClips.Add(BgmType.InGame2, Resources.Load<AudioClip>("Sounds/Bgm/BGM_InGame_2"));
-        //bgmClips.Add(BgmType.GameOver, Resources.Load<AudioClip>("Sounds/Bgm/BGM_GameOver"));
+        if(Initialized == true)
+        {
+            return;
+        }
+
         Initialized = true;
+
+        for(int i = (int)BgmType.Undefined + 1; i < (int)BgmType.End_Of_Bgm; ++i)
+        {
+            BgmType type = (BgmType)i;
+            bgmClips.Add(type, Resources.Load<AudioClip>("Sounds/Bgm/" + type.ToString()));
+        }
     }
 
     private void OnBgmVolumeChanged(float value)

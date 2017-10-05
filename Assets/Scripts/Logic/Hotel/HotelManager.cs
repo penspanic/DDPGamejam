@@ -64,7 +64,6 @@ namespace DDP.Logic
 				Main_Scene.GradeChangeListener.Instance.OnHotelGradeIncreased();
 			}
 
-			Debug.Log("BBBB: " + OnExpRateChanged.GetInvocationList().Length);
             OnExpRateChanged?.Invoke(gradeInfo.GetExpRate(Score));
         }
 

@@ -40,8 +40,19 @@ namespace DDP.UI
 			var curVisitor = Logic.VisitorManager.Instance.currentVisitor;
 			var sprs = curVisitor.sprs;
 
-			ApplyCharImg(sprs);
-			ApplyOutline(Logic.VisitorManager.Instance.VisitorRating);
+            int visitorRating = Logic.VisitorManager.Instance.VisitorRating;
+
+            if(visitorRating <= 3)
+            {
+                SfxManager.Instance.Play(SfxType.UI_Result_Normal);
+            }
+            else
+            {
+                SfxManager.Instance.Play(SfxType.UI_result_Success);
+            }
+
+            ApplyCharImg(sprs);
+			ApplyOutline(visitorRating);
 
 			// Stars
 			for (int i = 0; i < stars.Length; ++i)
@@ -56,8 +67,9 @@ namespace DDP.UI
 
 
 			float aniTime = 0.4f;
-			for (int i = 0; i < Logic.VisitorManager.Instance.VisitorRating; ++i)
+			for (int i = 0; i < visitorRating; ++i)
 			{
+                SfxManager.Instance.Play(SfxType.Star);
 				stars[i].FireStarEffect(aniTime);
 				yield return new WaitForSeconds(aniTime);
 			}
@@ -134,7 +146,9 @@ namespace DDP.UI
         {
 			if (isShowed == false)
 				return;
-			
+
+            SfxManager.Instance.Play(SfxType.UI_Click3);
+
             Logic.VisitorManager.Instance.OnResultPopupClosed();
             PopupManager.Instance.PopHidePopup();
         }

@@ -5,43 +5,17 @@ using System.Linq;
 
 public enum SfxType
 {
-    //// UI
-    //UI_Cancel,
-    //UI_Click,
-    //UI_Move,
-    //// InGame-Character
-
-    //Character_Charge,
-    //Character_Crush, // 일단 보류
-    //Character_Hit,
-    //Character_Landing,
-
-    //Doctor_Dead,
-    //Doctor_Evade,
-    //Doctor_Fly,
-    //Doctor_Skill,
-
-    //Engineer_Dead,
-    //Engineer_Evade,
-    //Engineer_Fly,
-    //Engineer_Skill,
-
-    //Heavy_Counter,
-    //Heavy_Dead,
-    //Heavy_Fly,
-    //Heavy_Skill,
-    //Heavy_Walk,
-
-    //Rocketeer_Dead,
-    //Rocketeer_Evade,
-    //Rocketeer_Fly,
-    //Rocketeer_Skill,
-
-    //// InGame-Item
-    //Item_Create,
-    //Item_GetHp,
-    //Item_GetMp,
-    //Item_GetExtreme,
+    Undefined = 0,
+    UI_Click1,
+    UI_Click2,
+    UI_Click3,
+    UI_Alert,
+    UI_DragStart,
+    UI_DragEnd,
+    UI_Result_Normal,
+    UI_result_Success,
+    Star,
+    End_Of_Sfx,
 }
 
 public class SfxManager : Singleton<SfxManager>
@@ -57,6 +31,9 @@ public class SfxManager : Singleton<SfxManager>
     {
         base.Awake();
         DontDestroyOnLoad(this.gameObject);
+
+        Initialize();
+
         source = gameObject.AddComponent<AudioSource>();
         source.volume = SoundManager.Instance.SfxVolume;
 
@@ -85,40 +62,11 @@ public class SfxManager : Singleton<SfxManager>
         }
         IsInitialized = true;
 
-        //clips.Add(SfxType.UI_Cancel, Resources.Load<AudioClip>("Sounds/SFX_UI/SFX_UI_Cancel"));
-        //clips.Add(SfxType.UI_Click, Resources.Load<AudioClip>("Sounds/SFX_UI/SFX_UI_Click"));
-        //clips.Add(SfxType.UI_Move, Resources.Load<AudioClip>("Sounds/SFX_UI/SFX_UI_Move"));
-
-        //clips.Add(SfxType.Character_Charge, Resources.Load<AudioClip>("Sounds/SFX_Character/SFX_Character_Charge"));
-        //clips.Add(SfxType.Character_Crush, Resources.Load<AudioClip>("Sounds/SFX_Character/SFX_Character_Crush"));
-        //clips.Add(SfxType.Character_Hit, Resources.Load<AudioClip>("Sounds/SFX_Character/SFX_Character_Hit"));
-        //clips.Add(SfxType.Character_Landing, Resources.Load<AudioClip>("Sounds/SFX_Character/SFX_Character_Landing"));
-
-        //clips.Add(SfxType.Doctor_Dead, Resources.Load<AudioClip>("Sounds/SFX_Character/Doctor/SFX_Doctor_Dead"));
-        //clips.Add(SfxType.Doctor_Evade, Resources.Load<AudioClip>("Sounds/SFX_Character/Doctor/SFX_Doctor_Evade"));
-        //clips.Add(SfxType.Doctor_Fly, Resources.Load<AudioClip>("Sounds/SFX_Character/Doctor/SFX_Doctor_Fly"));
-        //clips.Add(SfxType.Doctor_Skill, Resources.Load<AudioClip>("Sounds/SFX_Character/Doctor/SFX_Doctor_Skill"));
-
-        //clips.Add(SfxType.Engineer_Dead, Resources.Load<AudioClip>("Sounds/SFX_Character/Engineer/SFX_Engineer_Dead"));
-        //clips.Add(SfxType.Engineer_Evade, Resources.Load<AudioClip>("Sounds/SFX_Character/Engineer/SFX_Engineer_Evade"));
-        //clips.Add(SfxType.Engineer_Fly, Resources.Load<AudioClip>("Sounds/SFX_Character/Engineer/SFX_Engineer_Fly"));
-        //clips.Add(SfxType.Engineer_Skill, Resources.Load<AudioClip>("Sounds/SFX_Character/Engineer/SFX_Engineer_Skill"));
-
-        //clips.Add(SfxType.Heavy_Counter, Resources.Load<AudioClip>("Sounds/SFX_Character/Heavy/SFX_Heavy_Counter"));
-        //clips.Add(SfxType.Heavy_Dead, Resources.Load<AudioClip>("Sounds/SFX_Character/Heavy/SFX_Heavy_Dead"));
-        //clips.Add(SfxType.Heavy_Fly, Resources.Load<AudioClip>("Sounds/SFX_Character/Heavy/SFX_Heavy_Fly"));
-        //clips.Add(SfxType.Heavy_Skill, Resources.Load<AudioClip>("Sounds/SFX_Character/Heavy/SFX_Heavy_Skill"));
-        //clips.Add(SfxType.Heavy_Walk, Resources.Load<AudioClip>("Sounds/SFX_Character/Heavy/SFX_Heavy_Walk"));
-
-        //clips.Add(SfxType.Rocketeer_Dead, Resources.Load<AudioClip>("Sounds/SFX_Character/Rocketeer/SFX_Rocketeer_Dead"));
-        //clips.Add(SfxType.Rocketeer_Evade, Resources.Load<AudioClip>("Sounds/SFX_Character/Rocketeer/SFX_Rocketeer_Evade"));
-        //clips.Add(SfxType.Rocketeer_Fly, Resources.Load<AudioClip>("Sounds/SFX_Character/Rocketeer/SFX_Rocketeer_Fly"));
-        //clips.Add(SfxType.Rocketeer_Skill, Resources.Load<AudioClip>("Sounds/SFX_Character/Rocketeer/SFX_Rocketeer_Skill"));
-
-        //clips.Add(SfxType.Item_Create, Resources.Load<AudioClip>("Sounds/SFX_Object/SFX_Object_Item_Create"));
-        //clips.Add(SfxType.Item_GetHp, Resources.Load<AudioClip>("Sounds/SFX_Object/SFX_Object_Item_GetHp"));
-        //clips.Add(SfxType.Item_GetMp, Resources.Load<AudioClip>("Sounds/SFX_Object/SFX_Object_Item_GetMp"));
-        //clips.Add(SfxType.Item_GetExtreme, Resources.Load<AudioClip>("Sounds/SFX_Object/SFX_Object_Item_GetExtreme"));
+        for(int i = (int)SfxType.Undefined + 1; i < (int)SfxType.End_Of_Sfx; ++i)
+        {
+            SfxType type = (SfxType)i;
+            clips.Add(type, Resources.Load<AudioClip>("Sounds/Sfx/" + type.ToString()));
+        }
 
         Debug.Log("SfxManager Load end.");
     }

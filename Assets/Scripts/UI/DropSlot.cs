@@ -45,8 +45,7 @@ namespace DDP.UI
                 targetVisitor.SetFood(DragTarget.selectedObject.GetComponent<FoodTicket>().TargetFood);
             }
 
-			Debug.Log(DragTarget.selectedObject.transform.position);
-			 explosion.PlayExplosion(DragTarget.selectedObject.transform.position);
+			explosion.PlayExplosion(DragTarget.selectedObject.transform.position);
         }
     }
 }

@@ -47,7 +47,7 @@ namespace DDP.Main_Scene
 			yield return new WaitForSeconds(0.1f);
 			whiteFade.enabled = true;
 			OnChangeStepImage(grade);
-
+            SfxManager.Instance.Play(SfxType.Star);
 
 			yield return whiteFade.DOFade(0f, 1f).WaitForCompletion();
 			lvUpImage.transform.DOScale(1f, 0.4f);
