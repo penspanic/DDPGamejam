@@ -141,7 +141,7 @@ PlayerSettings:
   targetPixelDensity: 0
   resolutionScalingMode: 0
   applicationIdentifier:
-    Android: com.DDP.MONSTRUM HOTEL
+    Android: com.DDP.MONSTRUM_HOTEL
     iOS: com.DDP.MONSTRUMHOTEL
   buildNumber: {}
   AndroidBundleVersionCode: 1
