@@ -56,6 +56,7 @@ namespace DDP.Logic
 
             rooms.SetActive(true);
             doorAnimator.Play("OpenAndClose");
+            SfxManager.Instance.Play(SfxType.Walk);
 
             UI.SelectMessage.Instance.Show(0);
 

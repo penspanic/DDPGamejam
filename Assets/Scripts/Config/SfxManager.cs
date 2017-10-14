@@ -15,6 +15,8 @@ public enum SfxType
     UI_Result_Normal,
     UI_result_Success,
     Star,
+    Walk,
+    Main_Bell,
     End_Of_Sfx,
 }
 

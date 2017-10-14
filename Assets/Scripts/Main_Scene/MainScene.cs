@@ -46,7 +46,10 @@ namespace DDP.Main_Scene
 			if (isUpgrading)
 				upgradeObjs.InitBeforeAni(level);
 			else
+            {
 				upgradeObjs.gameObject.SetActive(false);
+                SfxManager.Instance.Play(SfxType.Main_Bell);
+            }
 
 			StartCoroutine(ShowMainSceneRoutine(level, isUpgrading));
 			GradeChangeListener.Instance.isUpgrading = false;
